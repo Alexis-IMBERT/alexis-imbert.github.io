@@ -6,6 +6,7 @@
 set -e
 
 BASE_URL="${1:-http://localhost:4000}"
+SITE_FILE="_site/index.html"
 ERRORS=0
 WARNINGS=0
 
@@ -40,7 +41,26 @@ warn() {
 # AC1: CV Summary visible above fold
 echo "AC1: CV Summary visible above fold"
 echo "---"
-RESPONSE=$(curl -s "$BASE_URL")
+if [[ "$BASE_URL" =~ ^https?:// ]]; then
+  RESPONSE=$(curl -fsS "$BASE_URL" 2>/dev/null || true)
+else
+  RESPONSE=""
+fi
+
+if [ -z "$RESPONSE" ] && [ -f "$SITE_FILE" ]; then
+  RESPONSE=$(cat "$SITE_FILE")
+fi
+
+if [ -z "$RESPONSE" ]; then
+  fail "Unable to load homepage via $BASE_URL or fallback file $SITE_FILE."
+  echo ""
+  echo "=========================================="
+  echo "Test Summary"
+  echo "=========================================="
+  echo -e "Errors:   ${RED}$ERRORS${NC}"
+  echo -e "Warnings: ${YELLOW}$WARNINGS${NC}"
+  exit 1
+fi
 
 if echo "$RESPONSE" | grep -q "Alexis Imbert"; then
   pass "Name 'Alexis Imbert' found"
@@ -153,6 +173,51 @@ if echo "$RESPONSE" | grep -q "@media"; then
   pass "Media queries found (responsive CSS)"
 else
   warn "Media queries not found (may use external CSS)"
+fi
+
+echo ""
+
+# Story 2.3: External Profile Links
+echo "External Profile Links"
+echo "---"
+
+# Providers verification
+for provider in "ORCID" "ResearchGate" "Google Scholar" "GitHub" "LinkedIn"; do
+  if echo "$RESPONSE" | grep -q "Alexis Imbert on $provider"; then
+    pass "Provider '$provider' link found"
+  else
+    fail "Provider '$provider' link not found"
+  fi
+done
+
+# Attributes verification
+PROFILE_LINKS_BLOCK=$(echo "$RESPONSE" | sed -n '/external-profiles/,/<\/ul>/p')
+
+if echo "$PROFILE_LINKS_BLOCK" | grep -q 'target="_blank"'; then
+  pass "external-profiles contains target=\"_blank\""
+else
+  fail "external-profiles missing target=\"_blank\""
+fi
+
+if echo "$PROFILE_LINKS_BLOCK" | grep -q 'rel="noopener noreferrer"'; then
+  pass "external-profiles contains rel=\"noopener noreferrer\""
+else
+  fail "external-profiles missing rel=\"noopener noreferrer\""
+fi
+
+# Fallback verification
+INCLUDE_FILE="_includes/external-profiles.html"
+
+if grep -q 'site.researchgate_url' "$INCLUDE_FILE" && grep -q 'site.researchgate_profile' "$INCLUDE_FILE"; then
+  pass "ResearchGate supports explicit URL and profile fallback"
+else
+  fail "ResearchGate explicit URL/profile fallback logic missing"
+fi
+
+if grep -q 'site.scholar_url' "$INCLUDE_FILE" && grep -q 'site.scholar_userid' "$INCLUDE_FILE"; then
+  pass "Google Scholar supports explicit URL and user ID fallback"
+else
+  fail "Google Scholar explicit URL/user ID fallback logic missing"
 fi
 
 echo ""

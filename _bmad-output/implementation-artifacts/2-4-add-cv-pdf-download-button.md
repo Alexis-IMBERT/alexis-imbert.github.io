@@ -1,7 +1,7 @@
 # Story 2.4: Add CV PDF Download Button
 
 ---
-Status: ready-for-dev
+Status: done
 ---
 **Epic:** 2 - Profile & Professional Identity
 **Story ID:** 2.4
@@ -196,19 +196,19 @@ No `project-context.md` file was discovered in the workspace. Story context was 
 
 ## Tasks / Subtasks
 
-- [ ] Add CV download CTA in homepage content (AC: 1, 3)
-  - [ ] Add explicit anchor text "Download CV (PDF)"
-  - [ ] Link to `{{ '/assets/CV_Alexis_IMBERT.pdf' | relative_url }}`
-  - [ ] Add `download` attribute
-- [ ] Ensure visual prominence and responsive usability (AC: 3)
-  - [ ] Validate desktop visibility
-  - [ ] Validate mobile visibility (<= 768px and <= 480px)
-- [ ] Verify file correctness and end-user behavior (AC: 1, 2)
-  - [ ] Confirm target PDF exists and opens correctly
-  - [ ] Confirm user can save local copy from browser flow
-- [ ] Add/extend validation script in `spec/` (AC: 1, 3)
-  - [ ] Check rendered link path and text
-  - [ ] Optional HTTP status check in local preview
+- [x] Add CV download CTA in homepage content (AC: 1, 3)
+  - [x] Add explicit anchor text "Download CV (PDF)"
+  - [x] Link to `{{ '/assets/CV_Alexis_IMBERT.pdf' | relative_url }}`
+  - [x] Add `download` attribute
+- [x] Ensure visual prominence and responsive usability (AC: 3)
+  - [x] Validate desktop visibility
+  - [x] Validate mobile visibility (<= 768px and <= 480px)
+- [x] Verify file correctness and end-user behavior (AC: 1, 2)
+  - [x] Confirm target PDF exists and opens correctly
+  - [x] Confirm user can save local copy from browser flow
+- [x] Add/extend validation script in `spec/` (AC: 1, 3)
+  - [x] Check rendered link path and text
+  - [x] Optional HTTP status check in local preview
 
 ---
 
@@ -245,15 +245,36 @@ GPT-5.3-Codex
 
 - Ultimate context engine analysis completed - comprehensive developer guide created.
 - Story prepared with implementation guardrails to prevent incorrect pathing, accessibility gaps, and non-semantic CTA behavior.
+- Automated review fixes applied:
+  - Added explicit `.btn` / `.btn-primary` styles in layout to make CTA prominence deterministic and responsive.
+  - Extended `spec/cv_download_ac_test.sh` with resilient source loading (localhost first, fallback to `_site` artifacts), CTA prominence class check, PDF signature validation, and SHA-256 checksum comparison against repository asset.
+  - Story status and task tracking synchronized after code-review fixes.
 
 ### File List
 
 - `_bmad-output/implementation-artifacts/2-4-add-cv-pdf-download-button.md`
+- `index.md`
+- `_layouts/default.html`
+- `spec/cv_download_ac_test.sh`
+
+### Senior Developer Review (AI)
+
+- Date: 2026-03-22
+- Reviewer: Aimbert
+- Outcome: Changes Requested -> Fixed Automatically
+- Fixed findings:
+  - AC3 prominence gap closed by introducing explicit CTA styles for `.btn` and `.btn-primary`.
+  - AC2 verification strengthened with binary PDF signature and checksum validation.
+  - Story tracking consistency restored by updating task checkboxes and file list.
+
+### Change Log
+
+- 2026-03-22: Applied automated code-review fixes for Story 2.4 (CTA style prominence, stronger CV download validation, story status/task sync).
 
 ---
 
 ## Story Completion Status
 
 - Story document created: yes
-- Story status set to `ready-for-dev`: yes
-- Sprint status synchronized: pending update in `sprint-status.yaml` (next step in workflow)
+- Story status set to `done`: yes
+- Sprint status synchronized in `sprint-status.yaml`: yes

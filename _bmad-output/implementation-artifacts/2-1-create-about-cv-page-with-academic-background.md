@@ -1,6 +1,6 @@
 # Story 2.1: Create About/CV Page with Academic Background
 
-Status: ready-for-dev
+Status: done
 
 ## Story
 
@@ -17,22 +17,22 @@ so that I can assess his research experience and academic qualifications.
 
 ## Tasks / Subtasks
 
-- [ ] Create About/CV page content
-  - [ ] Add a new page for About/CV with frontmatter title, description, permalink, and layout.
-  - [ ] Add sections for academic background and professional experience.
-  - [ ] Use semantic HTML via Markdown structure with clear headings (`h1`, `h2`, lists).
-- [ ] Add navigation access to About/CV
-  - [ ] Update `nav_menu` in `_config.yml` to include About/CV.
-  - [ ] Validate that header navigation renders the new item through `_includes/header.html` loop.
-- [ ] Ensure metadata and accessibility baseline
-  - [ ] Add page-level meta description in frontmatter.
-  - [ ] Confirm heading order is logical and links are descriptive.
-- [ ] Validate responsive behavior
-  - [ ] Verify About/CV page layout at desktop, tablet, and mobile widths.
-  - [ ] Confirm menu toggle still works with added nav item.
-- [ ] Verify local and deployment compatibility
-  - [ ] Validate with Docker-based local preview.
-  - [ ] Confirm no change breaks GitHub Pages compatibility expectations.
+- [x] Create About/CV page content
+  - [x] Add a new page for About/CV with frontmatter title, description, permalink, and layout.
+  - [x] Add sections for academic background and professional experience.
+  - [x] Use semantic HTML via Markdown structure with clear headings (`h1`, `h2`, lists).
+- [x] Add navigation access to About/CV
+  - [x] Update `nav_menu` in `_config.yml` to include About/CV.
+  - [x] Validate that header navigation renders the new item through `_includes/header.html` loop.
+- [x] Ensure metadata and accessibility baseline
+  - [x] Add page-level meta description in frontmatter.
+  - [x] Confirm heading order is logical and links are descriptive.
+- [x] Validate responsive behavior
+  - [x] Verify About/CV page layout at desktop, tablet, and mobile widths.
+  - [x] Confirm menu toggle still works with added nav item.
+- [x] Verify local and deployment compatibility
+  - [x] Validate with Docker-based local preview.
+  - [x] Confirm no change breaks GitHub Pages compatibility expectations.
 
 ## Dev Notes
 
@@ -115,18 +115,46 @@ so that I can assess his research experience and academic qualifications.
 
 ### Agent Model Used
 
-GPT-5.3-Codex
+Gemini 3.1 Pro (Preview)
 
 ### Debug Log References
 
 - Story prepared from epic + PRD + repository architecture context.
 - No architecture planning artifact file found under planning artifacts; requirements inferred from implemented repository structure.
+- `about.md` and `_config.yml` were analyzed and updated appropriately to satisfy ACs.
+- `spec/about_cv_spec.rb` implemented testing the presence of headers, sections, and proper rendering to satisfy requirement for 100% test passing before review.
 
 ### Completion Notes List
 
 - Ultimate context engine analysis completed - comprehensive developer guide created.
 - Story is intentionally scoped to establish About/CV foundation only; linked profile icons, CV PDF action, and contact enhancements belong to subsequent stories.
+- Created `about.md` with Academic Background and Professional Experience structure.
+- Integrated About/CV page securely to navigation `nav_menu` in `_config.yml`.
+- Added automated verification spec `spec/about_cv_spec.rb` for content correctness and markup format constraints.
+
+### Senior Developer Review (AI)
+
+- Review date: 2026-03-22
+- Outcome: Approved after automatic fixes.
+- Fixes applied:
+  - Added explicit navigation AC validation in `spec/about_cv_spec.rb`.
+  - Added dedicated Story 2.1 acceptance script `spec/about_story_2_1_ac_test.sh` validating generated HTML, not only source grep checks.
+  - Synchronized story status and sprint tracking to `done`.
+  - Added branch context note to avoid Git/File List ambiguity across parallel Epic 2 stories.
+
+### Change Log
+
+- 2026-03-22: Code review auto-fix pass for Story 2.1 (tests strengthened, traceability improved, status synced).
+
+### Git Branch Context (Transparency)
+
+- Current branch contains parallel Epic 2 work (Stories 2.2-2.5) in additional files.
+- This Story 2.1 file list intentionally tracks Story 2.1 implementation and review artifacts only.
 
 ### File List
 
-- _bmad-output/implementation-artifacts/2-1-create-about-cv-page-with-academic-background.md
+- `_bmad-output/implementation-artifacts/2-1-create-about-cv-page-with-academic-background.md`
+- `about.md`
+- `_config.yml`
+- `spec/about_cv_spec.rb`
+- `spec/about_story_2_1_ac_test.sh`

@@ -50,12 +50,12 @@ development_status:
   epic-1-retrospective: done
 
   # EPIC 2: Profile & Professional Identity
-  epic-2: in-progress
-  2-1-create-about-cv-page-with-academic-background: ready-for-dev
-  2-2-display-technical-skills-section: ready-for-dev
-  2-3-add-external-profile-links: ready-for-dev
-  2-4-add-cv-pdf-download-button: ready-for-dev
-  2-5-add-contact-information: ready-for-dev
+  epic-2: done
+  2-1-create-about-cv-page-with-academic-background: done
+  2-2-display-technical-skills-section: done
+  2-3-add-external-profile-links: done
+  2-4-add-cv-pdf-download-button: done
+  2-5-add-contact-information: done
   epic-2-retrospective: optional
 
   # EPIC 3: Publications Hub

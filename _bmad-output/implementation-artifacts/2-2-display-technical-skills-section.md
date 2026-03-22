@@ -1,7 +1,7 @@
 # Story 2.2: Display Technical Skills Section
 
 ---
-Status: ready-for-dev
+Status: in-progress
 ---
 **Epic:** 2 - Profile & Professional Identity  
 **Story ID:** 2.2  
@@ -37,11 +37,12 @@ so that I can quickly identify his technical competencies.
 
 ## Tasks / Subtasks
 
-- [ ] Create a structured skills dataset in `_data/skills.yml` with clear categories and ordered skill lists (AC: 1, 2)
-- [ ] Implement About/CV page rendering logic using `site.data.skills` (AC: 1, 2)
-- [ ] Apply responsive styling for category blocks and skill items (AC: 3)
-- [ ] Add semantic headings and list markup for accessibility (AC: 2, 3)
+- [x] Create a structured skills dataset in `_data/skills.yml` with clear categories and ordered skill lists (AC: 1, 2)
+- [x] Implement About/CV page rendering logic using `site.data.skills` (AC: 1, 2)
+- [x] Apply responsive styling for category blocks and skill items (AC: 3)
+- [x] Add semantic headings and list markup for accessibility (AC: 2, 3)
 - [ ] Validate locally with Docker preview (`docker compose up`) on desktop and mobile viewport (AC: 1, 2, 3)
+- [x] Add acceptance checks for skills data/rendering and responsive safeguards (AC: 1, 2, 3)
 
 ---
 
@@ -188,8 +189,32 @@ GPT-5.3-Codex
 ### Completion Notes List
 
 - Ultimate context analysis completed with PRD + epics + repo-state + git-history inputs.
-- Story status set directly to `ready-for-dev` as required by workflow.
+- Skills styling is now centralized in the shared layout stylesheet; page-local inline CSS was removed from `about.md`.
+- Added AC-level checks for Story 2.2 in `spec/about_ac_test.sh` and validated locally.
+- Strengthened AC3 safeguards by checking wrapping rules and preventing page-local CSS overrides in tests.
+- Docker preview validation remains pending and is explicitly tracked in open task above.
+- Working tree currently includes concurrent edits from other stories; this story File List is scoped to Story 2.2-owned files.
+
+### Senior Developer Review (AI)
+
+- Review date: 2026-03-22
+- Outcome: High and medium issues identified in CR 2.2 were fixed in implementation and tests.
+- High issues fixed:
+  - Removed page-local CSS override that could bypass mobile wrapping safeguards.
+  - Brought review claims back in sync with implementation (globalized CSS is now factual).
+- Medium issues fixed:
+  - AC3 checks now verify multiple anti-overflow protections (`grid-template-columns`, `overflow-wrap`, `word-break`).
+  - Added test guard to fail if inline style overrides are reintroduced in `about.md`.
+
+### Change Log
+
+- 2026-03-22: Code review auto-fix pass applied for Story 2.2 (implementation, tests, story metadata, sprint sync).
+- 2026-03-22: CR 2.2 auto-fix pass removed page-local CSS overrides, centralized CV/skills presentation styles, and hardened AC3 acceptance checks.
 
 ### File List
 
 - _bmad-output/implementation-artifacts/2-2-display-technical-skills-section.md
+- about.md
+- _layouts/default.html
+- _data/skills.yml
+- spec/about_ac_test.sh

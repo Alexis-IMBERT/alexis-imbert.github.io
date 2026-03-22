@@ -1,6 +1,6 @@
 # Story 2.5: Add Contact Information
 
-**Status:** ready-for-dev  
+**Status:** done  
 **Epic:** 2 - Profile & Professional Identity  
 **Story ID:** 2.5  
 **Priority:** P0 - Profile Completeness  
@@ -35,24 +35,24 @@ so that I can reach out for opportunities or collaboration.
 
 ## Tasks / Subtasks
 
-- [ ] Add a dedicated contact page with a clear, accessible email CTA (AC: 1, 2, 3)
-  - [ ] Create `contact.md` with front matter (`layout`, `title`, `description`, `permalink: /contact/`)
-  - [ ] Add visible contact text and a strong anchor label (for example: "Email Alexis")
-  - [ ] Implement `mailto:{{ site.email | default: site.author.email }}` as the primary contact action
-  - [ ] Ensure no contact form element is introduced
+- [x] Add a dedicated contact page with a clear, accessible email CTA (AC: 1, 2, 3)
+  - [x] Create `contact.md` with front matter (`layout`, `title`, `description`, `permalink: /contact/`)
+  - [x] Add visible contact text and a strong anchor label (for example: "Email Alexis")
+  - [x] Implement `mailto:{{ site.email | default: site.author.email }}` as the primary contact action
+  - [x] Ensure no contact form element is introduced
 
-- [ ] Ensure contact entry points remain discoverable from existing navigation (AC: 2)
-  - [ ] Verify Contact is present in header navigation (`_includes/header.html` and `nav_menu` fallback)
-  - [ ] Verify homepage still contains a contact callout/link
+- [x] Ensure contact entry points remain discoverable from existing navigation (AC: 2)
+  - [x] Verify Contact is present in header navigation (`_includes/header.html` and `nav_menu` fallback)
+  - [x] Verify homepage still contains a contact callout/link
 
-- [ ] Keep behavior privacy-safe and semantically correct (AC: 1, 3)
-  - [ ] Use real hyperlink navigation (`<a href="mailto:...">`) rather than button JS hacks
-  - [ ] Do not add analytics hooks, tracking pixels, or server-side processing for contact
+- [x] Keep behavior privacy-safe and semantically correct (AC: 1, 3)
+  - [x] Use real hyperlink navigation (`<a href="mailto:...">`) rather than button JS hacks
+  - [x] Do not add analytics hooks, tracking pixels, or server-side processing for contact
 
-- [ ] Add/adjust tests for contact behavior and regressions (AC: 1, 2, 3)
-  - [ ] Add a shell acceptance test that validates `mailto:` presence in built `/_site/contact/index.html`
-  - [ ] Assert there is no `<form` on contact page output
-  - [ ] Keep existing homepage/navigation checks passing
+- [x] Add/adjust tests for contact behavior and regressions (AC: 1, 2, 3)
+  - [x] Add a shell acceptance test that validates `mailto:` presence in built `/_site/contact/index.html`
+  - [x] Assert there is no `<form` on contact page output
+  - [x] Keep existing homepage/navigation checks passing
 
 ---
 
@@ -143,8 +143,9 @@ Recent commits indicate stable implementation conventions to preserve:
 ## Story Completion Status
 
 - Story context document created with implementation guardrails, architecture alignment, testing expectations, and anti-regression guidance.
-- Status set to `ready-for-dev`.
-- Completion note: Ultimate context engine analysis completed - comprehensive developer guide created.
+- Status set to `done` after AI code review fixes.
+- Acceptance criteria validated with `spec/contact_ac_test.sh` and `spec/homepage_ac_test.sh`.
+- Completion note: kept `contact.md` and `index.md` behavior unchanged, then hardened acceptance tests for configured-email validation and homepage discoverability/reliability.
 
 ---
 
@@ -152,16 +153,39 @@ Recent commits indicate stable implementation conventions to preserve:
 
 ### Agent Model Used
 
-GPT-5.3-Codex
+Gemini 3.5 Pro
 
 ### Debug Log References
 
-- N/A (context preparation only)
+- Execution of `./spec/contact_ac_test.sh` passed.
+- Execution of `./spec/homepage_ac_test.sh` passed against built site fallback.
 
 ### Completion Notes List
 
-- Story prepared for `dev-story` execution.
+- All components of the contact page functionality were active in the repository.
+- Made a minor fix to `index.md` to properly use Jekyll templating instead of hardcoded raw email for `mailto:` link.
+- Hardened `spec/contact_ac_test.sh` to assert configured email in `mailto:` and homepage discoverability.
+- Hardened `spec/homepage_ac_test.sh` to support `_site/index.html` fallback when local server is unavailable.
+- Verified test coverage with test script execution. Subtasks successfully fulfilled.
+- Noted that the working tree also contains parallel changes from other stories; this story file tracks only 2.5 scope changes.
 
 ### File List
 
 - `_bmad-output/implementation-artifacts/2-5-add-contact-information.md`
+- `contact.md`
+- `index.md`
+- `spec/contact_ac_test.sh`
+- `spec/homepage_ac_test.sh`
+
+### Senior Developer Review (AI)
+
+Date: 2026-03-22
+
+- HIGH fixed: regression claim for homepage checks is now backed by a resilient script path (`spec/homepage_ac_test.sh`) that can validate from URL or built `_site/index.html` fallback.
+- MEDIUM fixed: contact AC1 now verifies configured email value appears in `mailto:` output (`spec/contact_ac_test.sh`).
+- MEDIUM fixed: contact discoverability now has explicit homepage assertion in contact acceptance test (`spec/contact_ac_test.sh`).
+- MEDIUM addressed: story notes now explicitly mention parallel unrelated working-tree edits to avoid scope confusion during review.
+
+### Change Log
+
+- 2026-03-22: Applied AI code review fixes for story 2.5 tests, validated AC evidence, and moved story status to `done`.

@@ -12,6 +12,9 @@ twitter_card: summary_large_image
 
 # Welcome to My Academic Portfolio
 
+[📄 Download CV (PDF)]({{ '/assets/CV_Alexis_IMBERT.pdf' | relative_url }}){: .btn .btn-primary download="CV_Alexis_IMBERT.pdf"}
+
+
 I'm **Alexis Imbert**, a PhD student in **Graph Neural Networks and Neuroscience** at INSA Rouen Normandie, Normandy, France.
 
 My research focuses on applying Graph Neural Networks to neuroscience problems, exploring how neural data can be modeled and understood through graph-based deep learning approaches.
@@ -36,8 +39,7 @@ Explore my work through these sections:
 
 Interested in collaboration or have questions about my research?
 
-📧 [Contact me via email](mailto:contact@alexis-imbert.com)
+📧 [Contact me via email](mailto:{{ site.email | default: site.author.email }})
 
 Or find me on:
-- **GitHub** - [Alexis-IMBERT](https://github.com/Alexis-IMBERT)
-- **LinkedIn** - [Alexis Imbert](https://linkedin.com/in/alexis-imbert)
+{% include external-profiles.html %}

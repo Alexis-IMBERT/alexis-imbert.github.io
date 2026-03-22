@@ -1,0 +1,41 @@
+<ul class="external-profiles">
+  {% assign researchgate_href = "" %}
+  {% if site.researchgate_url and site.researchgate_url != "" %}
+    {% assign researchgate_href = site.researchgate_url %}
+  {% elsif site.researchgate_profile and site.researchgate_profile != "" %}
+    {% assign researchgate_href = "https://www.researchgate.net/profile/" | append: site.researchgate_profile %}
+  {% endif %}
+
+  {% assign scholar_href = "" %}
+  {% if site.scholar_url and site.scholar_url != "" %}
+    {% assign scholar_href = site.scholar_url %}
+  {% elsif site.scholar_userid and site.scholar_userid != "" %}
+    {% assign scholar_href = "https://scholar.google.com/citations?user=" | append: site.scholar_userid %}
+  {% endif %}
+
+  {% if site.orcid_id and site.orcid_id != "" %}
+  <li>
+    <a href="https://orcid.org/{{ site.orcid_id }}" target="_blank" rel="noopener noreferrer" aria-label="Alexis Imbert on ORCID">ORCID</a>
+  </li>
+  {% endif %}
+  {% if researchgate_href != "" %}
+  <li>
+    <a href="{{ researchgate_href }}" target="_blank" rel="noopener noreferrer" aria-label="Alexis Imbert on ResearchGate">ResearchGate</a>
+  </li>
+  {% endif %}
+  {% if scholar_href != "" %}
+  <li>
+    <a href="{{ scholar_href }}" target="_blank" rel="noopener noreferrer" aria-label="Alexis Imbert on Google Scholar">Google Scholar</a>
+  </li>
+  {% endif %}
+  {% if site.github_username and site.github_username != "" %}
+  <li>
+    <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener noreferrer" aria-label="Alexis Imbert on GitHub">GitHub</a>
+  </li>
+  {% endif %}
+  {% if site.linkedin_username and site.linkedin_username != "" %}
+  <li>
+    <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}" target="_blank" rel="noopener noreferrer" aria-label="Alexis Imbert on LinkedIn">LinkedIn</a>
+  </li>
+  {% endif %}
+</ul>

@@ -1,0 +1,4 @@
+/* Compatibility stylesheet: keeps legacy /assets/css/main.css requests valid. */
+:root {
+  color-scheme: light;
+}

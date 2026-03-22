@@ -1,6 +1,6 @@
 # Story 2.3: Add External Profile Links
 
-Status: ready-for-dev
+Status: done
 
 ## Story
 
@@ -24,25 +24,25 @@ so that I can explore more about his work on other platforms.
 
 ## Tasks / Subtasks
 
-- [ ] Create a single reusable profile-links include (AC: 1, 2, 3)
-  - [ ] Add `_includes/external-profiles.html` to avoid duplicated markup across pages.
-  - [ ] Render the five required providers in a stable order: ORCID, ResearchGate, Google Scholar, GitHub, LinkedIn.
-  - [ ] Ensure each anchor uses `target="_blank"` and `rel="noopener noreferrer"`.
-  - [ ] Ensure each link has accessible text (`aria-label`) and/or visible link text.
+- [x] Create a single reusable profile-links include (AC: 1, 2, 3)
+  - [x] Add `_includes/external-profiles.html` to avoid duplicated markup across pages.
+  - [x] Render the five required providers in a stable order: ORCID, ResearchGate, Google Scholar, GitHub, LinkedIn.
+  - [x] Ensure each anchor uses `target="_blank"` and `rel="noopener noreferrer"`.
+  - [x] Ensure each link has accessible text (`aria-label`) and/or visible link text.
 
-- [ ] Configure profile identifiers/URLs in site configuration (AC: 1)
-  - [ ] Keep `github_username` and `linkedin_username` from `_config.yml` as source of truth.
-  - [ ] Add/complete config keys for ORCID, ResearchGate, and Google Scholar profile IDs/URLs.
-  - [ ] Implement graceful fallback: do not render a provider when its config is empty.
+- [x] Configure profile identifiers/URLs in site configuration (AC: 1)
+  - [x] Keep `github_username` and `linkedin_username` from `_config.yml` as source of truth.
+  - [x] Add/complete config keys for ORCID, ResearchGate, and Google Scholar profile IDs/URLs.
+  - [x] Implement graceful fallback: do not render a provider when its config is empty.
 
-- [ ] Integrate links into current user-visible entry point (AC: 1)
-  - [ ] Add include call to `index.md` in the "Let's Connect" section.
-  - [ ] Keep integration compatible with future About/CV page from Story 2.1 (same include can be reused).
+- [x] Integrate links into current user-visible entry point (AC: 1)
+  - [x] Add include call to `index.md` in the "Let's Connect" section.
+  - [x] Keep integration compatible with future About/CV page from Story 2.1 (same include can be reused).
 
-- [ ] Add/extend acceptance checks (AC: 1, 2, 3)
-  - [ ] Extend `spec/homepage_ac_test.sh` to verify five providers are present when configured.
-  - [ ] Verify generated HTML includes `target="_blank"`, `rel="noopener noreferrer"`, and descriptive labels.
-  - [ ] Keep scripts macOS-compatible (portable `grep`/`sed`; avoid GNU-only flags).
+- [x] Add/extend acceptance checks (AC: 1, 2, 3)
+  - [x] Extend `spec/homepage_ac_test.sh` to verify five providers are present when configured.
+  - [x] Verify generated HTML includes `target="_blank"`, `rel="noopener noreferrer"`, and descriptive labels.
+  - [x] Keep scripts macOS-compatible (portable `grep`/`sed`; avoid GNU-only flags).
 
 ## Dev Notes
 
@@ -150,12 +150,20 @@ GPT-5.3-Codex
 
 - create-story workflow context assembly completed
 - sprint status updated to ready-for-dev for this story
+- code-review identified AC/documentation/test gaps and they were fixed in-place
 
 ### Completion Notes List
 
 - Ultimate context engine analysis completed - comprehensive developer guide created.
-- Story is ready for implementation by the dev agent.
+- Added profile links include to About/CV to satisfy AC1 coverage on About or homepage.
+- Added explicit URL support for ResearchGate and Google Scholar with fallback to profile/user ID keys.
+- Extended acceptance checks to validate fallback logic and fail fast when local preview is unavailable.
 
 ### File List
 
 - _bmad-output/implementation-artifacts/2-3-add-external-profile-links.md
+- _includes/external-profiles.html
+- _config.yml
+- index.md
+- about.md
+- spec/homepage_ac_test.sh
