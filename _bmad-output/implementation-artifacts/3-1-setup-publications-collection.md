@@ -1,6 +1,6 @@
 # Story 3.1: Setup Publications Collection
 
-**Status:** in-progress  
+**Status:** review  
 **Epic:** 3 - Publications Hub  
 **Story ID:** 3.1  
 **Priority:** P0 - Publications Foundation  
@@ -203,19 +203,19 @@ Recent commit patterns show:
 
 ## Tasks / Subtasks
 
-- [ ] Verify and complete publications collection configuration (AC: 1)
-  - [ ] Confirm `collections.publications.output` is `true`
-  - [ ] Confirm `collections.publications.permalink` is `/publications/:path/`
-- [ ] Verify publication layout baseline (AC: 2)
-  - [ ] Confirm `_layouts/publication.html` exists and is applied by defaults
-  - [ ] Ensure template supports core metadata rendering (`title`, `authors`, `venue`, `date`)
-- [ ] Establish and document publication frontmatter schema contract (AC: 3)
-  - [ ] Ensure required/optional fields are explicit and aligned with PRD
-  - [ ] Ensure future publication files can follow one canonical schema
-- [ ] Ensure collection is operational for first content entries (AC: 4)
-  - [ ] Confirm `_publications/` path is present and usable
-  - [ ] Validate build passes with collection configuration intact
-- [ ] Add readiness/regression checks in `spec/` (AC: 1, 2, 3, 4)
+- [x] Verify and complete publications collection configuration (AC: 1)
+  - [x] Confirm `collections.publications.output` is `true`
+  - [x] Confirm `collections.publications.permalink` is `/publications/:path/`
+- [x] Verify publication layout baseline (AC: 2)
+  - [x] Confirm `_layouts/publication.html` exists and is applied by defaults
+  - [x] Ensure template supports core metadata rendering (`title`, `authors`, `venue`, `date`)
+- [x] Establish and document publication frontmatter schema contract (AC: 3)
+  - [x] Ensure required/optional fields are explicit and aligned with PRD
+  - [x] Ensure future publication files can follow one canonical schema
+- [x] Ensure collection is operational for first content entries (AC: 4)
+  - [x] Confirm `_publications/` path is present and usable
+  - [x] Validate build passes with collection configuration intact
+- [x] Add readiness/regression checks in `spec/` (AC: 1, 2, 3, 4)
 
 ---
 
@@ -252,11 +252,15 @@ GPT-5.3-Codex
 - Ultimate context engine analysis completed - comprehensive developer guide created.
 - Story prepared with anti-reinvention guardrails and schema consistency notes for Epic 3 implementation.
 - Story intentionally kept in `ready-for-dev` state for developer execution.
+- Verified collections output and default paths within `_config.yml`.
+- Verified `_layouts/publication.html`.
+- Implemented and successfully passed validation script `spec/publications_collection_ac_test.sh`.
 
 ### File List
 
 - `_bmad-output/implementation-artifacts/3-1-setup-publications-collection.md`
 - `_bmad-output/implementation-artifacts/sprint-status.yaml`
+- `spec/publications_collection_ac_test.sh`
 
 ---
 

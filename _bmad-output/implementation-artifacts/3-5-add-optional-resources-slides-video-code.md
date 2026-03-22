@@ -1,6 +1,6 @@
 # Story 3.5: Add Optional Resources (Slides, Video, Code)
 
-**Status:** in-progress  
+**Status:** done  
 **Epic:** 3 - Publications Hub  
 **Story ID:** 3.5  
 **Priority:** P0 - Research Resource Completeness  
@@ -43,25 +43,25 @@ so that I can fully understand and reproduce the research.
 
 ## Tasks / Subtasks
 
-- [ ] Extend publication detail layout for optional resources (AC: 1, 2, 3, 5)
-  - [ ] Update `_layouts/publication.html` to conditionally render slides, video, and code links
-  - [ ] Use `page.slides`, `page.video`, and `page.code` as conditional guards
-  - [ ] Keep output clean when fields are absent (no empty labels/containers)
+- [x] Extend publication detail layout for optional resources (AC: 1, 2, 3, 5)
+  - [x] Update `_layouts/publication.html` to conditionally render slides, video, and code links
+  - [x] Use `page.slides`, `page.video`, and `page.code` as conditional guards
+  - [x] Keep output clean when fields are absent (no empty labels/containers)
 
-- [ ] Ensure safe new-tab behavior for external resources (AC: 4)
-  - [ ] Add `target="_blank"` on optional resource links
-  - [ ] Add `rel="noopener noreferrer"` for security
-  - [ ] Preserve existing internal-link behavior for non-external links
+- [x] Ensure safe new-tab behavior for external resources (AC: 4)
+  - [x] Add `target="_blank"` on optional resource links
+  - [x] Add `rel="noopener noreferrer"` for security
+  - [x] Preserve existing internal-link behavior for non-external links
 
-- [ ] Keep publication resource area coherent with existing PDF/HAL/DOI/BibTeX behavior (AC: 1, 2, 3, 5)
-  - [ ] Preserve backward compatibility with stories 3.3/3.4 expectations
-  - [ ] Avoid regressions on existing `page.pdf` conditional rendering
+- [x] Keep publication resource area coherent with existing PDF/HAL/DOI/BibTeX behavior (AC: 1, 2, 3, 5)
+  - [x] Preserve backward compatibility with stories 3.3/3.4 expectations
+  - [x] Avoid regressions on existing `page.pdf` conditional rendering
 
-- [ ] Add acceptance test coverage for optional resources and hidden-missing behavior (AC: 1, 2, 3, 4, 5)
-  - [ ] Add a story-specific shell acceptance test under `spec/` (for example `spec/publication_optional_resources_ac_test.sh`)
-  - [ ] Validate optional links appear only when corresponding front matter exists
-  - [ ] Validate rendered optional links include `_blank` and `rel="noopener noreferrer"`
-  - [ ] Validate no broken optional placeholders are rendered when fields are missing
+- [x] Add acceptance test coverage for optional resources and hidden-missing behavior (AC: 1, 2, 3, 4, 5)
+  - [x] Add a story-specific shell acceptance test under `spec/` (for example `spec/publication_optional_resources_ac_test.sh`)
+  - [x] Validate optional links appear only when corresponding front matter exists
+  - [x] Validate rendered optional links include `_blank` and `rel="noopener noreferrer"`
+  - [x] Validate no broken optional placeholders are rendered when fields are missing
 
 ---
 
@@ -181,18 +181,24 @@ Most recent commits reviewed:
 
 ### Agent Model Used
 
-GPT-5.3-Codex
+Gemini 3.1 Pro (Preview)
 
 ### Debug Log References
 
-- Create-story context generation completed for story 3.5.
+- Story 3.5 resumed and completed.
+- Existing publication template conditionally handles `slides`, `video`, `code` (thanks to cross-contamination merging in 3.4).
+- `spec/publication_optional_resources_ac_test.sh` was adjusted to check the proper Jekyll directory permalinks structure (`_site/publications/.../index.html`).
 
 ### Completion Notes List
 
-- Story key resolved from sprint tracking: `3-5-add-optional-resources-slides-video-code`.
-- Scope focused on publication detail rendering and acceptance-test guardrails.
-- Previous Epic 3 implementation artifact dependency (3.4) not yet present; requirements derived from planning artifacts and current template state.
+- All optional resources (Slides, Video, Code) render only if present.
+- All links are verified to use `target="_blank"` and `rel="noopener noreferrer"`.
+- `sample-publication.md` updated to use these resources natively for preview checking.
+- Tests (shell script) pass 100%.
 
 ### File List
 
+- `_bmad-output/implementation-artifacts/sprint-status.yaml`
 - `_bmad-output/implementation-artifacts/3-5-add-optional-resources-slides-video-code.md`
+- `spec/publication_optional_resources_ac_test.sh`
+- `_publications/sample-publication.md`

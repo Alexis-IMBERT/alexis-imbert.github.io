@@ -39,32 +39,32 @@ so that I can view all information and resources for that publication.
 
 ## Tasks / Subtasks
 
-- [ ] Strengthen the publication detail layout for complete metadata rendering (AC: 1, 2, 4)
-  - [ ] Update `_layouts/publication.html` to render `title`, `authors`, `venue`, `date`, and `abstract` with semantic sections
-  - [ ] Use semantic containers (`<article>`, `<header>`, `<section>`, `<dl>` or clear labeled blocks)
-  - [ ] Keep `{{ content }}` rendering for long-form publication context
-  - [ ] Keep conditional rendering for optional fields so pages remain robust with partial metadata
+- [x] Strengthen the publication detail layout for complete metadata rendering (AC: 1, 2, 4)
+  - [x] Update `_layouts/publication.html` to render `title`, `authors`, `venue`, `date`, and `abstract` with semantic sections
+  - [x] Use semantic containers (`<article>`, `<header>`, `<section>`, `<dl>` or clear labeled blocks)
+  - [x] Keep `{{ content }}` rendering for long-form publication context
+  - [x] Keep conditional rendering for optional fields so pages remain robust with partial metadata
 
-- [ ] Enforce unique publication URL behavior through collection configuration and content shape (AC: 3)
-  - [ ] Confirm `_config.yml` keeps `collections.publications.output: true`
-  - [ ] Confirm `_config.yml` keeps `collections.publications.permalink: /publications/:path/`
-  - [ ] Ensure publication documents in `_publications/` use unique file names/slugs to prevent URL collisions
+- [x] Enforce unique publication URL behavior through collection configuration and content shape (AC: 3)
+  - [x] Confirm `_config.yml` keeps `collections.publications.output: true`
+  - [x] Confirm `_config.yml` keeps `collections.publications.permalink: /publications/:path/`
+  - [x] Ensure publication documents in `_publications/` use unique file names/slugs to prevent URL collisions
 
-- [ ] Add Scholar-oriented metadata strategy in layout and/or includes (AC: 4)
-  - [ ] Ensure standard page SEO metadata is provided via existing `jekyll-seo-tag` usage in the base layout
-  - [ ] Add publication-specific citation meta tags in head rendering path (for example: `citation_title`, `citation_author`, `citation_publication_date`, `citation_pdf_url` when available)
-  - [ ] Generate one `<meta name="citation_author">` per author when authors are provided as an array
-  - [ ] Ensure metadata values are derived from publication front matter (single source of truth)
+- [x] Add Scholar-oriented metadata strategy in layout and/or includes (AC: 4)
+  - [x] Ensure standard page SEO metadata is provided via existing `jekyll-seo-tag` usage in the base layout
+  - [x] Add publication-specific citation meta tags in head rendering path (for example: `citation_title`, `citation_author`, `citation_publication_date`, `citation_pdf_url` when available)
+  - [x] Generate one `<meta name="citation_author">` per author when authors are provided as an array
+  - [x] Ensure metadata values are derived from publication front matter (single source of truth)
 
-- [ ] Validate detail-page discoverability from publications list (AC: 1, 3)
-  - [ ] Ensure each item in `publications.md` links to `{{ pub.url | relative_url }}`
-  - [ ] Verify at least one publication fixture exists in `_publications/` during local testing to validate detail page generation
+- [x] Validate detail-page discoverability from publications list (AC: 1, 3)
+  - [x] Ensure each item in `publications.md` links to `{{ pub.url | relative_url }}`
+  - [x] Verify at least one publication fixture exists in `_publications/` during local testing to validate detail page generation
 
-- [ ] Add acceptance/regression tests for publication detail template behavior (AC: 1, 2, 3, 4)
-  - [ ] Add a shell acceptance test under `spec/` validating generated detail page exists at `/publications/{slug}/`
-  - [ ] Assert detail page HTML contains title/authors/venue/date/abstract markers
-  - [ ] Assert semantic structure markers are present in built output (`<article>`, heading hierarchy)
-  - [ ] Assert key Scholar/SEO meta tags are present for the publication page
+- [x] Add acceptance/regression tests for publication detail template behavior (AC: 1, 2, 3, 4)
+  - [x] Add a shell acceptance test under `spec/` validating generated detail page exists at `/publications/{slug}/`
+  - [x] Assert detail page HTML contains title/authors/venue/date/abstract markers
+  - [x] Assert semantic structure markers are present in built output (`<article>`, heading hierarchy)
+  - [x] Assert key Scholar/SEO meta tags are present for the publication page
 
 ---
 
@@ -188,3 +188,14 @@ GPT-5.3-Codex
 
 - `_bmad-output/implementation-artifacts/3-3-create-publication-detail-page-template.md`
 - `_bmad-output/implementation-artifacts/sprint-status.yaml`
+
+## Dev Agent Record
+- Validated that `_layouts/publication.html` correctly implements the requirements (uses semantic containers and prints abstract).
+- Validated that `_layouts/default.html` already injected `citation_*` SEO elements in the head.
+- Added `abstract` to the sample publication test file.
+- Ran shell acceptance tests which passed 100%.
+
+## File List
+- _publications/sample-publication.md
+- spec/publication_detail_ac_test.sh
+- _bmad-output/implementation-artifacts/3-3-create-publication-detail-page-template.md
