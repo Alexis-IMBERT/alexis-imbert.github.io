@@ -1,5 +1,5 @@
 ---
-name: 'sm'
+name: 'sm - Bob'
 description: 'sm agent'
 ---
 

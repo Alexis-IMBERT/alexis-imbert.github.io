@@ -42,12 +42,12 @@ story_location: /Users/aimbert/Documents/git/alexis-imbert.github.io/_bmad-outpu
 
 development_status:
   # EPIC 1: Foundation & Site Structure
-  epic-1: in-progress
+  epic-1: done
   1-1-initialize-jekyll-site-with-al-folio-theme: done
   1-2-configure-docker-development-environment: done
   1-3-setup-github-actions-deployment: done
   1-4-create-homepage-with-navigation: done
-  epic-1-retrospective: optional
+  epic-1-retrospective: done
 
   # EPIC 2: Profile & Professional Identity
   epic-2: backlog
