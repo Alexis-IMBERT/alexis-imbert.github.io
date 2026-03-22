@@ -1,0 +1,78 @@
+name: Deploy Jekyll site to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+env:
+  JEKYLL_ENV: production
+  BUNDLE_JOBS: 4
+  BUNDLE_RETRY: 3
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+          cache-version: 0
+      
+      - name: Build with Jekyll
+        run: bundle exec jekyll build --verbose
+        env:
+          JEKYLL_ENV: production
+      
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site/
+
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Verify deployed URL is reachable
+        run: |
+          set -euo pipefail
+          URL="${{ steps.deployment.outputs.page_url }}"
+
+          for attempt in {1..10}; do
+            if curl -fsSLI "$URL" >/dev/null; then
+              echo "Site reachable at $URL"
+              exit 0
+            fi
+
+            echo "Attempt $attempt/10 failed, retrying in 10 seconds..."
+            sleep 10
+          done
+
+          echo "Deployment URL is not reachable: $URL"
+          exit 1

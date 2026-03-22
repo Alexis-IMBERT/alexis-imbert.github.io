@@ -11,8 +11,7 @@ GEM
       http_parser.rb (~> 0)
     eventmachine (1.2.7)
     ffi (1.17.3)
-    ffi (1.17.3-aarch64-linux-gnu)
-    ffi (1.17.3-aarch64-linux-musl)
+    ffi (1.17.3-aarch64-linux)
     forwardable-extended (2.6.0)
     google-protobuf (3.23.4-aarch64-linux)
     google-protobuf (3.23.4-arm64-darwin)
@@ -85,9 +84,7 @@ GEM
     rspec-support (3.13.7)
     rubyzip (2.4.1)
     safe_yaml (1.0.5)
-    sass-embedded (1.58.3-aarch64-linux-gnu)
-      google-protobuf (~> 3.21)
-    sass-embedded (1.58.3-aarch64-linux-musl)
+    sass-embedded (1.58.3-aarch64-linux)
       google-protobuf (~> 3.21)
     sass-embedded (1.58.3-arm64-darwin)
       google-protobuf (~> 3.21)
@@ -98,7 +95,7 @@ GEM
 
 PLATFORMS
   aarch64-linux
-  aarch64-linux-musl
+  aarch64-linux
   universal-darwin-25
 
 DEPENDENCIES

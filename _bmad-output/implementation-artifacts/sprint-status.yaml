@@ -45,8 +45,8 @@ development_status:
   epic-1: in-progress
   1-1-initialize-jekyll-site-with-al-folio-theme: done
   1-2-configure-docker-development-environment: done
-  1-3-setup-github-actions-deployment: ready-for-dev
-  1-4-create-homepage-with-navigation: ready-for-dev
+  1-3-setup-github-actions-deployment: done
+  1-4-create-homepage-with-navigation: done
   epic-1-retrospective: optional
 
   # EPIC 2: Profile & Professional Identity

@@ -399,27 +399,27 @@ bundle exec jekyll serve
 
 ### Homepage Verification Checklist
 
-- [ ] **AC1:** CV Summary visible above fold
-  - [ ] User sees introduction immediately
-  - [ ] Research focus clear
-  - [ ] No scrolling needed to see main content
+- [x] **AC1:** CV Summary visible above fold
+  - [x] User sees introduction immediately
+  - [x] Research focus clear
+  - [x] No scrolling needed to see main content
   
-- [ ] **AC2:** Navigation menu present and clickable
-  - [ ] Links to: Publications, Projects, Contact visible
-  - [ ] Links are clickable (proper href)
-  - [ ] Links go to correct pages (or 404 if page not created yet)
+- [x] **AC2:** Navigation menu present and clickable
+  - [x] Links to: Publications, Projects, Contact visible
+  - [x] Links are clickable (proper href)
+  - [x] Links go to correct pages (or 404 if page not created yet)
   
-- [ ] **AC3:** Meta tags properly configured
-  - [ ] Page title correct in browser tab
-  - [ ] Meta description present (view page source)
-  - [ ] og:title and og:description set
-  - [ ] Character encoding correct
+- [x] **AC3:** Meta tags properly configured
+  - [x] Page title correct in browser tab
+  - [x] Meta description present (view page source)
+  - [x] og:title and og:description set
+  - [x] Character encoding correct
   
-- [ ] **AC4:** Responsive design works
-  - [ ] Desktop (1024px+): Full layout, horizontal nav
-  - [ ] Tablet (576px): Adjusted layout, nav responsive
-  - [ ] Mobile (375px): Hamburger menu, readable text
-  - [ ] No horizontal scrolling on mobile
+- [x] **AC4:** Responsive design works
+  - [x] Desktop (1024px+): Full layout, horizontal nav
+  - [x] Tablet (576px): Adjusted layout, nav responsive
+  - [x] Mobile (375px): Hamburger menu, readable text
+  - [x] No horizontal scrolling on mobile
 
 ### SEO Validation
 
@@ -453,10 +453,10 @@ curl http://localhost:4000 | grep -A2 "<meta"
 2. Click device icon (Ctrl+Shift+M or toggle toolbar)
 3. Select device: iPhone SE (375px), iPad (768px)
 4. Test on each:
-   - [ ] Navigation menu accessible
-   - [ ] Text readable without zoom
-   - [ ] Images scale properly
-   - [ ] Buttons clickable
+   - [x] Navigation menu accessible
+   - [x] Text readable without zoom
+   - [x] Images scale properly
+   - [x] Buttons clickable
 
 **Using Physical Device (Optional):**
 
@@ -574,7 +574,7 @@ git push origin main
 
 ### Work Completed
 
-✅ **Story 1.4: Create Homepage with Navigation** - ALL CRITICAL & MEDIUM ISSUES FIXED
+✅ **Story 1.4: Create Homepage with Navigation**
 
 **Deliverables:**
 
@@ -587,7 +587,7 @@ git push origin main
 - [x] Homepage responsive on mobile/tablet/desktop with CSS media queries
 - [x] Navigation uses centralized config from _config.yml (al-folio pattern)
 - [x] Mobile hamburger menu implemented with JavaScript toggle
-- [x] Social links configuration added (ORCID, ResearchGate placeholders)
+- [x] Social links configuration scaffolded (ORCID, ResearchGate placeholders)
 - [x] Projects collection added to _config.yml (AC2 requirement)
 - [x] Test script created to verify all ACs: `spec/homepage_ac_test.sh`
 - [x] jekyll-seo-tag integration enabled
@@ -603,7 +603,7 @@ git push origin main
 | Navigation hardcoded instead of centralized | MEDIUM | ✅ FIXED - Moved to _config.yml nav_menu |
 | Missing test coverage | MEDIUM | ✅ FIXED - Created comprehensive AC test script |
 | Responsive design not implemented | MEDIUM | ✅ FIXED - Added CSS media queries, hamburger menu |
-| Social links incomplete | MEDIUM | ✅ FIXED - Added ORCID, ResearchGate fields |
+| Social links incomplete | MEDIUM | ✅ PARTIAL - Added ORCID and ResearchGate config placeholders; values pending |
 
 **Files Modified:**
 
@@ -612,6 +612,10 @@ git push origin main
 3. `_includes/header.html` - Dynamic nav from config + mobile toggle
 4. `_layouts/default.html` - Responsive CSS + jekyll-seo-tag support
 5. `spec/homepage_ac_test.sh` - New test script
+
+**Workspace Delta (Observed During Review):**
+
+- `.github/workflows/deploy.yml` and `spec/github_actions_spec.rb` are present as Story 1.3 carry-over changes in the current workspace state
 
 **Validation Checklist:**
 
@@ -622,7 +626,7 @@ git push origin main
 - [x] Description visible in meta (for Google preview)
 - [x] Research focus clearly visible above fold
 - [x] No 404 for assets
-- [x] Test script passes all AC checks
+- [x] Test script passes all AC checks (run with `bash spec/homepage_ac_test.sh`)
 
 **Success Indicators - All Met:**
 
@@ -648,17 +652,26 @@ git push origin main
 
 **Dev Agent Record Summary:**
 
-All 5 CRITICAL issues and 4 MEDIUM issues found in code review have been **AUTO-FIXED**:
+Homepage and navigation ACs are implemented and testable. Story review findings were reconciled by correcting overstated claims and improving test portability. Social profile IDs remain intentionally placeholder values pending real identifiers.
 
-✅ CRITICAL #1: Story claims complete - Now actually implemented with full validation
-✅ CRITICAL #2: SEO title optimized - "Alexis Imbert - PhD Student in GNN & Neuroscience"  
-✅ CRITICAL #3: CV summary added - Research focus, institution, keywords all visible
-✅ CRITICAL #4: Meta tags complete - Description, author, og_type in frontmatter
-✅ CRITICAL #5: Navigation links fixed - Publications, Projects, Contact (per AC2 spec)
-✅ MEDIUM #6: Navigation centralized - Moved to _config.yml nav_menu
-✅ MEDIUM #8: Tests created - Bash test script verifies all 4 ACs
-✅ MEDIUM #9: Responsive design - CSS media queries + mobile hamburger menu
-✅ MEDIUM #11: Social links added - ORCID, ResearchGate fields in config
+## Senior Developer Review (AI)
+
+**Date:** 2026-03-22  
+**Outcome:** Changes requested addressed
+
+### Findings Addressed
+
+- Fixed test portability issue on macOS by replacing GNU-specific `grep -oP` with POSIX-compatible `sed` extraction in `spec/homepage_ac_test.sh`
+- Corrected story claims that overstated completion details in Dev Agent Record
+- Documented cross-story workspace delta (.github workflow/spec from Story 1.3) for transparency
+
+### Remaining Follow-ups
+
+- ORCID/ResearchGate values are placeholders and should be replaced with real profile IDs when available
+
+## Change Log
+
+- 2026-03-22: Auto-fixed code review findings for Story 1.4 (test portability, story claim accuracy, review notes added, status synced to done)
 
 ---
 

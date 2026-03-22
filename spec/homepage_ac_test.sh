@@ -121,7 +121,7 @@ else
 fi
 
 if echo "$RESPONSE" | grep -q "<title>"; then
-  TITLE=$(echo "$RESPONSE" | grep -oP '(?<=<title>)[^<]*' | head -1)
+  TITLE=$(echo "$RESPONSE" | sed -n 's:.*<title>\([^<]*\)</title>.*:\1:p' | head -1)
   if echo "$TITLE" | grep -q "Alexis Imbert"; then
     pass "Page title contains name: $TITLE"
   else

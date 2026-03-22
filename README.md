@@ -33,3 +33,10 @@ bundle exec jekyll serve
 ```
 
 View the site at `http://localhost:4000`.
+
+## Deployment
+
+The site is automatically deployed to GitHub Pages when changes are pushed to the `main` branch. 
+This is handled via GitHub Actions (`.github/workflows/deploy.yml`).
+
+To view the live site: https://alexis-imbert.github.io
