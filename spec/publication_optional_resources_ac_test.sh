@@ -1,0 +1,93 @@
+#!/bin/bash
+# acceptance test for Story 3.5: Optional Resources (Slides, Video, Code)
+
+set -e
+
+# Setup fixtures
+mkdir -p _publications
+
+cat << 'EOF' > _publications/test-publication-with-optional-resources.md
+---
+title: "Test Publication With Optional Resources"
+slides: "https://example.com/slides"
+video: "https://example.com/video"
+code: "https://example.com/code"
+---
+Test content.
+EOF
+
+cat << 'EOF' > _publications/test-publication-without-optional-resources.md
+---
+title: "Test Publication Without Optional Resources"
+---
+Test content.
+EOF
+
+echo "Building site..."
+bundle exec jekyll build
+
+echo "Testing publication WITH optional resources..."
+CONTENT=$(cat _site/publications/test-publication-with-optional-resources.html)
+
+if ! echo "$CONTENT" | grep -q 'href="https://example.com/slides"'; then
+  echo "FAIL: Slides link not found"
+  exit 1
+fi
+if ! echo "$CONTENT" | grep -q 'View Slides'; then
+  echo "FAIL: Slides link text not found"
+  exit 1
+fi
+if ! echo "$CONTENT" | grep -q 'href="https://example.com/video"'; then
+  echo "FAIL: Video link not found"
+  exit 1
+fi
+if ! echo "$CONTENT" | grep -q 'Watch Presentation'; then
+  echo "FAIL: Video link text not found"
+  exit 1
+fi
+if ! echo "$CONTENT" | grep -q 'href="https://example.com/code"'; then
+  echo "FAIL: Code link not found"
+  exit 1
+fi
+if ! echo "$CONTENT" | grep -q 'View Code'; then
+  echo "FAIL: Code link text not found"
+  exit 1
+fi
+
+echo "Testing new-tab attributes for optional resources..."
+if ! echo "$CONTENT" | grep -q 'href="https://example.com/slides".*target="_blank".*rel="noopener noreferrer"'; then
+  echo "FAIL: Slides link missing target=_blank or rel attributes"
+  exit 1
+fi
+if ! echo "$CONTENT" | grep -q 'href="https://example.com/video".*target="_blank".*rel="noopener noreferrer"'; then
+  echo "FAIL: Video link missing target=_blank or rel attributes"
+  exit 1
+fi
+if ! echo "$CONTENT" | grep -q 'href="https://example.com/code".*target="_blank".*rel="noopener noreferrer"'; then
+  echo "FAIL: Code link missing target=_blank or rel attributes"
+  exit 1
+fi
+
+echo "Testing publication WITHOUT optional resources..."
+CONTENT_MISSING=$(cat _site/publications/test-publication-without-optional-resources.html)
+
+if echo "$CONTENT_MISSING" | grep -q 'View Slides'; then
+  echo "FAIL: Slides link text should not be present"
+  exit 1
+fi
+if echo "$CONTENT_MISSING" | grep -q 'Watch Presentation'; then
+  echo "FAIL: Video link text should not be present"
+  exit 1
+fi
+if echo "$CONTENT_MISSING" | grep -q 'View Code'; then
+  echo "FAIL: Code link text should not be present"
+  exit 1
+fi
+
+echo "All tests passed for Story 3.5!"
+
+# Cleanup fixtures
+rm _publications/test-publication-with-optional-resources.md
+rm _publications/test-publication-without-optional-resources.md
+
+exit 0

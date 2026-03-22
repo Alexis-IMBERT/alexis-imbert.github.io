@@ -59,12 +59,12 @@ development_status:
   epic-2-retrospective: optional
 
   # EPIC 3: Publications Hub
-  epic-3: backlog
-  3-1-setup-publications-collection: backlog
-  3-2-create-publications-list-page: backlog
-  3-3-create-publication-detail-page-template: backlog
-  3-4-add-publication-resources-pdf-hal-doi-bibtex: backlog
-  3-5-add-optional-resources-slides-video-code: backlog
+  epic-3: in-progress
+  3-1-setup-publications-collection: in-progress
+  3-2-create-publications-list-page: done
+  3-3-create-publication-detail-page-template: in-progress
+  3-4-add-publication-resources-pdf-hal-doi-bibtex: ready-for-dev
+  3-5-add-optional-resources-slides-video-code: in-progress
   epic-3-retrospective: optional
 
   # EPIC 4: Projects Showcase

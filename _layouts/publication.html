@@ -3,25 +3,159 @@ layout: default
 ---
 
 <article class="publication">
-  <h1>{{ page.title }}</h1>
+  <header class="publication-header">
+    <h1 class="publication-title">{{ page.title }}</h1>
+    
+    {% if page.authors %}
+    <p class="authors">
+      {% if page.authors.first %}
+        {{ page.authors | join: ", " }}
+      {% else %}
+        {{ page.authors }}
+      {% endif %}
+    </p>
+    {% endif %}
+    
+    <div class="publication-meta">
+      {% if page.venue %}
+      <span class="venue">{{ page.venue }}</span>
+      {% endif %}
+      
+      {% if page.venue and page.date %}
+      <span class="meta-separator">&bull;</span>
+      {% endif %}
+
+      {% if page.date %}
+      <time class="date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %Y" }}</time>
+      {% endif %}
+    </div>
+  </header>
   
-  {% if page.authors %}
-  <p class="authors">{{ page.authors }}</p>
-  {% endif %}
-  
-  {% if page.venue %}
-  <p class="venue">{{ page.venue }}</p>
-  {% endif %}
-  
-  {% if page.date %}
-  <p class="date">{{ page.date | date: "%B %Y" }}</p>
+  {% if page.abstract %}
+  <section class="abstract" aria-labelledby="abstract-heading">
+    <h2 id="abstract-heading">Abstract</h2>
+    <p>{{ page.abstract }}</p>
+  </section>
   {% endif %}
   
   <div class="content">
     {{ content }}
   </div>
   
-  {% if page.pdf %}
-  <p><a href="{{ page.pdf }}">Download PDF</a></p>
+  {% if page.pdf or page.hal or page.doi or page.bibtex or page.slides or page.video or page.code %}
+  <section class="resources" aria-labelledby="resources-heading">
+    <h2 id="resources-heading">Resources</h2>
+    <ul class="resource-links">
+      {% if page.pdf %}
+      <li><a href="{{ page.pdf }}" class="btn btn-pdf" download>Download PDF</a></li>
+      {% endif %}
+      
+      {% if page.hal %}
+      <li><a href="{{ page.hal }}" class="btn btn-hal" target="_blank" rel="noopener noreferrer">HAL</a></li>
+      {% endif %}
+      
+      {% if page.doi %}
+        {% assign doi_link = page.doi %}
+        {% unless page.doi contains "http://" or page.doi contains "https://" %}
+          {% assign doi_link = "https://doi.org/" | append: page.doi %}
+        {% endunless %}
+      <li><a href="{{ doi_link }}" class="btn btn-doi" target="_blank" rel="noopener noreferrer">DOI</a></li>
+      {% endif %}
+      
+      {% if page.slides %}
+      <li><a href="{{ page.slides }}" class="btn btn-slides" target="_blank" rel="noopener noreferrer">View Slides</a></li>
+      {% endif %}
+      
+      {% if page.video %}
+      <li><a href="{{ page.video }}" class="btn btn-video" target="_blank" rel="noopener noreferrer">Watch Presentation</a></li>
+      {% endif %}
+      
+      {% if page.code %}
+      <li><a href="{{ page.code }}" class="btn btn-code" target="_blank" rel="noopener noreferrer">View Code</a></li>
+      {% endif %}
+      
+      {% if page.bibtex %}
+      <li>
+        <details>
+          <summary class="btn btn-bibtex">Show BibTeX</summary>
+          <div class="bibtex-container">
+            <button class="copy-bibtex-btn" aria-label="Copy BibTeX to clipboard" onclick="copyBibtex(this)">Copy</button>
+            <pre><code id="bibtex-content">{{ page.bibtex | escape }}</code></pre>
+          </div>
+        </details>
+      </li>
+      {% endif %}
+    </ul>
+  </section>
   {% endif %}
 </article>
+
+{% if page.bibtex %}
+<script>
+function copyBibtex(btn) {
+  var codeElement = btn.nextElementSibling.querySelector('code') || document.getElementById('bibtex-content');
+  var textToCopy = codeElement.innerText;
+  
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(textToCopy).then(function() {
+      var originalText = btn.innerText;
+      btn.innerText = 'Copied!';
+      setTimeout(function() { btn.innerText = originalText; }, 2000);
+    });
+  } else {
+    var textArea = document.createElement("textarea");
+    textArea.value = textToCopy;
+    document.body.appendChild(textArea);
+    textArea.select();
+    try {
+      document.execCommand('copy');
+      var originalText = btn.innerText;
+      btn.innerText = 'Copied!';
+      setTimeout(function() { btn.innerText = originalText; }, 2000);
+    } catch (err) {
+      console.error('Failed to copy', err);
+    }
+    document.body.removeChild(textArea);
+  }
+}
+</script>
+{% endif %}
+<style>
+  .resource-links {
+    list-style: none;
+    padding: 0;
+    margin: 1.5em 0 0 0;
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .resource-links li { margin: 0; }
+  .resource-links .btn {
+    display: inline-block;
+    padding: 0.5em 1em;
+    background-color: #eee;
+    color: #333;
+    text-decoration: none;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 0.9em;
+    cursor: pointer;
+  }
+  .resource-links .btn:hover { background-color: #ddd; }
+  .bibtex-container {
+    margin-top: 1em;
+    position: relative;
+    background: #f5f5f5;
+    padding: 2.5em 1em 1em 1em;
+    border-radius: 4px;
+  }
+  .copy-bibtex-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 0.2em 0.5em;
+    font-size: 0.8em;
+    cursor: pointer;
+  }
+</style>
