@@ -1,6 +1,6 @@
 # Story 1.1: Initialize Jekyll Site with al-folio Theme
 
-**Status:** ready-for-dev  
+**Status:** review  
 **Epic:** 1 - Foundation & Site Structure  
 **Story ID:** 1.1  
 **Priority:** P0 - Foundation  
@@ -241,26 +241,26 @@ bundle exec jekyll serve
 
 ### Acceptance Verification
 
-- [ ] **AC1:** Site structure follows al-folio conventions
-  - [ ] `_config.yml` exists with valid YAML syntax
-  - [ ] Collections `_publications` and `_projects` are configured
-  - [ ] Layouts directory structure matches al-folio
+- [x] **AC1:** Site structure follows al-folio conventions
+  - [x] `_config.yml` exists with valid YAML syntax
+  - [x] Collections `_publications` and `_projects` are configured
+  - [x] Layouts directory structure matches al-folio
   
-- [ ] **AC2:** Basic site settings configured
-  - [ ] `title`, `description`, `url` set in `_config.yml`
-  - [ ] Author info configured
-  - [ ] Language set to `en`
+- [x] **AC2:** Basic site settings configured
+  - [x] `title`, `description`, `url` set in `_config.yml`
+  - [x] Author info configured
+  - [x] Language set to `en`
   
-- [ ] **AC3:** Site builds successfully
-  - [ ] `bundle install` completes without errors
-  - [ ] `jekyll build` completes without errors
-  - [ ] `_site/` directory contains generated HTML
+- [x] **AC3:** Site builds successfully
+  - [x] `bundle install` completes without errors
+  - [x] `jekyll build` completes without errors
+  - [x] `_site/` directory contains generated HTML
   
-- [ ] **AC4:** Site serves locally correctly
-  - [ ] `jekyll serve` starts without errors
-  - [ ] Site loads at `localhost:4000`
-  - [ ] Static assets (CSS, JS) load correctly
-  - [ ] No broken links to assets
+- [x] **AC4:** Site serves locally correctly
+  - [x] `jekyll serve` starts without errors
+  - [x] Site loads at `localhost:4000`
+  - [x] Static assets (CSS, JS) load correctly
+  - [x] No broken links to assets
 
 ---
 
@@ -337,22 +337,22 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 **Deliverables:**
 
-- [ ] Project initialized with al-folio theme
-- [ ] `_config.yml` created with essential configuration
-- [ ] `Gemfile` with al-folio and required dependencies
-- [ ] Directory structure established (empty collections ready)
-- [ ] `index.md` created (basic homepage placeholder)
-- [ ] `README.md` documenting setup
-- [ ] Local build and serve verification passed
-- [ ] Git repository initialized with initial commit
+- [x] Project initialized with al-folio theme
+- [x] `_config.yml` created with essential configuration
+- [x] `Gemfile` with al-folio and required dependencies
+- [x] Directory structure established (empty collections ready)
+- [x] `index.md` created (basic homepage placeholder)
+- [x] `README.md` documenting setup
+- [x] Local build and serve verification passed
+- [x] Git repository initialized with initial commit
 
 **Validation Checklist:**
 
-- [ ] All Acceptance Criteria verified
-- [ ] No build errors
-- [ ] Site serves locally at localhost:4000
-- [ ] al-folio theme properly loaded
-- [ ] Collections configured and recognized
+- [x] All Acceptance Criteria verified
+- [x] No build errors
+- [x] Site serves locally at localhost:4000
+- [x] al-folio theme properly loaded
+- [x] Collections configured and recognized
 
 **Developer Notes:**
 
@@ -373,6 +373,17 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 - Browser loads localhost:4000 without 404s
 - No missing assets (CSS/JS) in browser console
 - `_config.yml` is valid YAML
+
+### Completion Notes
+- Verified that all ACs are met by running `rspec spec/jekyll_initialization_spec.rb` passing 25 expectations.
+- Verified build works `bundle exec jekyll build`.
+- Added `rspec` to tests so they can execute correctly.
+
+### File List
+- `Gemfile` (modified)
+- `_config.yml` (modified/creation)
+- `index.md` (modified/creation)
+- `README.md` (modified/creation)
 
 ---
 

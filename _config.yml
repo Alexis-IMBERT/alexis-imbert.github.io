@@ -1,0 +1,76 @@
+# Site settings
+title: Alexis Imbert
+email: contact@alexis-imbert.com
+description: "Academic portfolio showcasing research, publications, and projects. PhD student at INSA Rouen Normandie focused on Graph Neural Networks and Neuroscience."
+baseurl: ""
+url: "https://alexis-imbert.github.io"
+lang: en
+
+# Author
+author:
+  name: Alexis Imbert
+  email: contact@alexis-imbert.com
+
+# Navigation menu items
+navbar:
+  enabled: true
+  sticky: false
+
+nav_menu:
+  - title: "Home"
+    href: "/"
+  - title: "Publications"
+    href: "/publications/"
+  - title: "Projects"
+    href: "/projects/"
+  - title: "Contact"
+    href: "/contact/"
+
+# Build settings
+markdown: kramdown
+remote_theme: alshedivat/al-folio
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-paginate
+
+# Collections
+collections:
+  publications:
+    output: true
+    permalink: /publications/:path/
+  projects:
+    output: true
+    permalink: /projects/:path/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "publications"
+    values:
+      layout: "publication"
+
+# Pagination
+paginate: 10
+paginate_path: "/blog/page:num/"
+
+# Social links
+github_username: Alexis-IMBERT
+linkedin_username: alexis-imbert
+orcid_id: ""  # Add when available
+researchgate_id: ""  # Add when available
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - _bmad/
+  - _bmad-output/
+  - spec/

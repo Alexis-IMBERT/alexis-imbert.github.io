@@ -1,0 +1,35 @@
+<header class="site-header">
+  <div class="wrapper">
+    <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav class="site-nav" id="site-nav">
+      {% if site.nav_menu %}
+        {% for nav_item in site.nav_menu %}
+          <a class="nav-link" href="{{ nav_item.href | relative_url }}">{{ nav_item.title }}</a>
+        {% endfor %}
+      {% else %}
+        <a class="nav-link" href="{{ '/' | relative_url }}">Home</a>
+        <a class="nav-link" href="{{ '/publications/' | relative_url }}">Publications</a>
+        <a class="nav-link" href="{{ '/projects/' | relative_url }}">Projects</a>
+        <a class="nav-link" href="{{ '/contact/' | relative_url }}">Contact</a>
+      {% endif %}
+    </nav>
+  </div>
+</header>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('menu-toggle');
+    const siteNav = document.getElementById('site-nav');
+    if (menuToggle) {
+      menuToggle.addEventListener('click', function() {
+        siteNav.classList.toggle('active');
+        menuToggle.classList.toggle('active');
+      });
+    }
+  });
+</script>

@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+<article class="publication">
+  <h1>{{ page.title }}</h1>
+  
+  {% if page.authors %}
+  <p class="authors">{{ page.authors }}</p>
+  {% endif %}
+  
+  {% if page.venue %}
+  <p class="venue">{{ page.venue }}</p>
+  {% endif %}
+  
+  {% if page.date %}
+  <p class="date">{{ page.date | date: "%B %Y" }}</p>
+  {% endif %}
+  
+  <div class="content">
+    {{ content }}
+  </div>
+  
+  {% if page.pdf %}
+  <p><a href="{{ page.pdf }}">Download PDF</a></p>
+  {% endif %}
+</article>
