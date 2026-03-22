@@ -1,0 +1,32 @@
+services:
+  jekyll:
+    # Build from local Dockerfile
+    build: .
+    
+    # Container name (optional but helps with commands)
+    container_name: alexis-imbert-jekyll
+    
+    # Port mapping: host:container
+    ports:
+      - "4000:4000"      # Jekyll HTTP server
+      - "35729:35729"    # LiveReload socket
+    
+    # Volume mounts for development
+    volumes:
+      # Mount source code as read-write
+      - .:/site
+    
+    # Environment variables
+    environment:
+      JEKYLL_ENV: development
+      JEKYLL_FORCE_POLLING: "true"
+      BUNDLE_JOBS: 4
+      BUNDLE_RETRY: 3
+    
+    # Keep container running even if command exits
+    stdin_open: true
+    tty: true
+    
+    # Restart policy
+    restart: unless-stopped
+

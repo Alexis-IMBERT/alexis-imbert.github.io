@@ -1,6 +1,6 @@
 # Story 1.2: Configure Docker Development Environment
 
-**Status:** ready-for-dev  
+**Status:** in-progress  
 **Epic:** 1 - Foundation & Site Structure  
 **Story ID:** 1.2  
 **Priority:** P0 - Foundation  
@@ -397,12 +397,13 @@ JEKYLL_ENV: production
    - `_config.yml` - Must exist in repo root
 
 3. **Files Modified:**
-   - `.gitignore` - Add Docker-related patterns:
+  - `.gitignore` - Remove `.dockerignore` ignore rule so build context config can be versioned:
 
      ```
-     # Docker
      .dockerignore
      ```
+  - `README.md` - Add Docker local development instructions
+  - `spec/docker_env_spec.rb` - Add and update Docker configuration tests
 
 ### Dependencies
 
@@ -477,15 +478,16 @@ JEKYLL_ENV: production
 
 **Deliverables:**
 
-- [ ] `Dockerfile` created for Jekyll service
-- [ ] `docker-compose.yml` created for service orchestration
-- [ ] `.dockerignore` created to optimize build
-- [ ] Docker image builds successfully
-- [ ] Container starts with `docker-compose up`
-- [ ] Site accessible at `localhost:4000`
+- [x] `Dockerfile` created for Jekyll service
+- [x] `docker-compose.yml` created for service orchestration
+- [x] `.dockerignore` created to optimize build
+- [x] Docker image and compose configuration implemented
+- [ ] Container starts with `docker-compose up` (requires runtime verification)
+- [ ] Site accessible at `localhost:4000` (requires runtime verification)
 - [ ] Live reload working (changes auto-refresh browser)
-- [ ] Environment variables properly configured
-- [ ] README updated with Docker setup instructions
+- [x] Environment variables properly configured
+- [x] README updated with Docker setup instructions
+- [x] Test coverage updated for Docker configuration
 
 **Validation Checklist:**
 
@@ -581,3 +583,41 @@ Upon **completion** of this story:
 - First Docker build: ~2-3 minutes
 - Testing & verification: ~15 minutes
 - Total: ~30-35 minutes
+
+---
+
+## File List
+
+- `Dockerfile`
+- `docker-compose.yml`
+- `.dockerignore`
+- `.gitignore`
+- `README.md`
+- `spec/docker_env_spec.rb`
+- `_bmad-output/implementation-artifacts/1-2-configure-docker-development-environment.md`
+- `_bmad-output/implementation-artifacts/sprint-status.yaml`
+
+---
+
+## Senior Developer Review (AI)
+
+**Reviewer:** Aimbert  
+**Date:** 2026-03-22
+
+### Findings Addressed
+
+- Fixed: `.dockerignore` is no longer ignored by git.
+- Fixed: Docker watch reliability improved with `--force_polling` and `JEKYLL_FORCE_POLLING=true`.
+- Fixed: Story checklists and completion claims now match available evidence.
+- Fixed: File documentation aligns with actual modified files.
+
+### Remaining Validation Needed
+
+- Execute runtime AC checks for AC1/AC2/AC3 with Docker daemon.
+- Validate AC4 production parity once Story 1.3 workflow is implemented.
+
+---
+
+## Change Log
+
+- 2026-03-22: Applied AI code-review fixes for Story 1.2 (Docker watch robustness, test updates, story corrections, status moved to in-progress).
