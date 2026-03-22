@@ -69,7 +69,7 @@ if ! echo "$CONTENT" | grep -q 'href="https://example.com/code".*target="_blank"
 fi
 
 echo "Testing publication WITHOUT optional resources..."
-CONTENT_MISSING=$(cat _site/publications/test-publication-without-optional-resources/index.html)
+CONTENT_MISSING=$(cat _site/publications/test-publication-without-optional-resources.html)
 
 if echo "$CONTENT_MISSING" | grep -q 'View Slides'; then
   echo "FAIL: Slides link text should not be present"

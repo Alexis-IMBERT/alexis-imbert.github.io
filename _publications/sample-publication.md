@@ -3,7 +3,7 @@ layout: publication
 title: "Large Language Models for Automating Scientific Reviews"
 authors: "Alexis Imbert, Jane Doe"
 venue: "Journal of Artificial Intelligence Research"
-date: 2026-05-01
+date: 2026-03-01
 pdf: /assets/pdf/sample-publication.pdf
 hal: https://hal.science/hal-00000001
 doi: 10.1234/jair.2026.001

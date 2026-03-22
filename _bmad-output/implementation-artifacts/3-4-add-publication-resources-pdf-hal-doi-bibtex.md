@@ -1,6 +1,6 @@
 # Story 3.4: Add Publication Resources (PDF, HAL, DOI, BibTeX)
 
-Status: ready-for-dev
+Status: completed
 
 ## Story
 
@@ -34,26 +34,26 @@ so that I can read and cite the paper.
 
 ## Tasks / Subtasks
 
-- [ ] Implement publication resources section in publication layout (AC: 1, 2, 3, 4, 7)
-  - [ ] Extend `_layouts/publication.html` to render a dedicated resources block
-  - [ ] Keep conditional rendering per field (`pdf`, `hal`, `doi`, `bibtex`)
-  - [ ] Keep existing metadata rendering (title/authors/venue/date/content) intact
-- [ ] Implement DOI and HAL link rendering rules (AC: 2, 3, 7)
-  - [ ] HAL: render only when `page.hal` exists and is non-empty
-  - [ ] DOI: support either raw DOI (`10.x/...`) or full URL; normalize to `https://doi.org/<doi>` when needed
-  - [ ] Add `target="_blank"` and `rel="noopener noreferrer"` for external links
-- [ ] Implement BibTeX interaction pattern (AC: 4, 5, 6)
-  - [ ] Preferred: add a progressive-enhancement copy button + fallback `<pre><code>` display
-  - [ ] Ensure feature still works when JS is unavailable (fallback visible text)
-  - [ ] Escape BibTeX content safely to prevent broken HTML
-- [ ] Preserve graceful degradation and accessibility (AC: 1, 7)
-  - [ ] Use semantic labels/headings for the resources section
-  - [ ] Ensure keyboard-accessible controls and visible focus states
-  - [ ] Avoid empty wrappers when resources are absent
-- [ ] Add verification coverage for publication resources (AC: 1-7)
-  - [ ] Add shell acceptance test (e.g., `spec/publication_resources_ac_test.sh`) validating rendered output for present/missing resources
-  - [ ] Add at least one fixture publication under `_publications/` for test execution
-  - [ ] Confirm no regressions for existing publication detail rendering
+-[x] Implement publication resources section in publication layout (AC: 1, 2, 3, 4, 7)
+  -[x] Extend `_layouts/publication.html` to render a dedicated resources block
+  -[x] Keep conditional rendering per field (`pdf`, `hal`, `doi`, `bibtex`)
+  -[x] Keep existing metadata rendering (title/authors/venue/date/content) intact
+-[x] Implement DOI and HAL link rendering rules (AC: 2, 3, 7)
+  -[x] HAL: render only when `page.hal` exists and is non-empty
+  -[x] DOI: support either raw DOI (`10.x/...`) or full URL; normalize to `https://doi.org/<doi>` when needed
+  -[x] Add `target="_blank"` and `rel="noopener noreferrer"` for external links
+-[x] Implement BibTeX interaction pattern (AC: 4, 5, 6)
+  -[x] Preferred: add a progressive-enhancement copy button + fallback `<pre><code>` display
+  -[x] Ensure feature still works when JS is unavailable (fallback visible text)
+  -[x] Escape BibTeX content safely to prevent broken HTML
+-[x] Preserve graceful degradation and accessibility (AC: 1, 7)
+  -[x] Use semantic labels/headings for the resources section
+  -[x] Ensure keyboard-accessible controls and visible focus states
+  -[x] Avoid empty wrappers when resources are absent
+-[x] Add verification coverage for publication resources (AC: 1-7)
+  -[x] Add shell acceptance test (e.g., `spec/publication_resources_ac_test.sh`) validating rendered output for present/missing resources
+  -[x] Add at least one fixture publication under `_publications/` for test execution
+  -[x] Confirm no regressions for existing publication detail rendering
 
 ## Dev Notes
 
