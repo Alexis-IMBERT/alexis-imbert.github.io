@@ -53,6 +53,11 @@ defaults:
       type: "publications"
     values:
       layout: "publication"
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
 
 # Pagination
 paginate: 10

@@ -1,6 +1,6 @@
 # Story 4.2: Create Projects List Page
 
-Status: ready-for-dev
+Status: done
 
 <!-- Note: Validation is optional. Run validate-create-story for quality check before dev-story. -->
 
@@ -51,10 +51,18 @@ so that I can explore Alexis's practical work and open-source contributions.
 
 ### Agent Model Used
 
-{{agent_model_name_version}}
+Gemini 3.1 Pro (Preview)
 
 ### Debug Log References
 
+None
+
 ### Completion Notes List
+- Enhanced `projects.md` to display projects in a grid layout using Bootstrap cards.
+- Ensured title, description, and image elements map correctly and included an elegant fallback for icons.
+- Verified `_config.yml` navigation links.
 
 ### File List
+- `projects.md`
+- `_config.yml`
+- `_bmad-output/implementation-artifacts/sprint-status.yaml`

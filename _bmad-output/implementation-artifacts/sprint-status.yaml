@@ -68,11 +68,11 @@ development_status:
   epic-3-retrospective: optional
 
   # EPIC 4: Projects Showcase
-  epic-4: in-progress
-  4-1-setup-projects-collection: ready-for-dev
-  4-2-create-projects-list-page: ready-for-dev
-  4-3-create-project-detail-page-template: ready-for-dev
-  4-4-add-github-repository-links: backlog
+  epic-4: done
+  4-1-setup-projects-collection: done
+  4-2-create-projects-list-page: done
+  4-3-create-project-detail-page-template: done
+  4-4-add-github-repository-links: done
   epic-4-retrospective: optional
 
   # EPIC 5: Content Management & Local Dev

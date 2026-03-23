@@ -1,0 +1,38 @@
+---
+layout: default
+---
+<article class="project-detail">
+  <header>
+    <h1 class="project-title">{{ page.title }}</h1>
+    <p class="project-description">{{ page.description }}</p>
+  </header>
+
+  {% if page.image %}
+  <div class="project-image">
+    <img src="{{ page.image | relative_url }}" alt="Screenshot or image for {{ page.title }}" />
+  </div>
+  {% endif %}
+
+  {% if page.technologies %}
+  <div class="project-technologies">
+    <h3>Technologies Used</h3>
+    <ul class="technology-list">
+      {% for tech in page.technologies %}
+      <li class="badge">{{ tech }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+
+  {% if page.github_url %}
+  <div class="project-links" style="margin-top: 1.5rem; margin-bottom: 2rem;">
+    <a href="{{ page.github_url }}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+      View on GitHub
+    </a>
+  </div>
+  {% endif %}
+
+  <div class="project-content">
+    {{ content }}
+  </div>
+</article>
