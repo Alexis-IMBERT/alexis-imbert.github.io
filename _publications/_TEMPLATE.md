@@ -5,7 +5,9 @@
 # Required Fields
 title: "Publication Title"
 date: YYYY-MM-DD
-authors: "Author One, Author Two"
+authors:
+  - "Author One"
+  - "Author Two"
 venue: "Conference or Journal Name"
 
 # Resource Links (All Optional, but recommended)

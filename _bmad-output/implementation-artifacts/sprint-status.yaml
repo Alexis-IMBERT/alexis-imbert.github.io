@@ -77,9 +77,9 @@ development_status:
 
   # EPIC 5: Content Management & Local Dev
   epic-5: in-progress
-  5-1-create-documentation-for-adding-publications: review
-  5-2-create-documentation-for-adding-projects: backlog
-  5-3-document-content-editing-workflow: review
-  5-4-verify-docker-compose-local-preview: review
-  5-5-create-readme-with-project-overview: review
+  5-1-create-documentation-for-adding-publications: done
+  5-2-create-documentation-for-adding-projects: done
+  5-3-document-content-editing-workflow: done
+  5-4-verify-docker-compose-local-preview: done
+  5-5-create-readme-with-project-overview: done
   epic-5-retrospective: optional

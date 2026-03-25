@@ -1,6 +1,27 @@
 # Alexis Imbert - Academic Portfolio
 
 This repository hosts my academic portfolio, built using Jekyll and the [al-folio](https://github.com/alshedivat/al-folio) theme.
+It serves as a professional hub to display my academic background, technical skills, publications, and projects.
+
+## Project Structure
+
+The project relies on standard Jekyll collections and data files:
+
+* `_publications/` - Contains markdown files for each academic publication.
+* `_projects/` - Contains markdown files for each project showcase.
+* `_data/` - Holds configuration data like `cv.yml` and `skills.yml` to drive dynamic UI sections.
+* `_includes/` & `_layouts/` - Contains the HTML templates and layouts that structure the site visually.
+* `assets/` - Contains CSS styles and images.
+
+## Content Management
+
+Guides for adding and managing content on the site can be found in the repository:
+
+* **[Add a publication](_publications/_TEMPLATE.md)** - Duplicate the template, rename your file, and fill frontmatter fields.
+* **[Add a project](_projects/_TEMPLATE.md)** - Duplicate the template, add image path/technologies, and write the project content.
+* **[Edit existing content](docs/editing-content.md)** - Update Markdown body vs frontmatter safely and preview with Docker.
+
+For both publications and projects, save your new file in the matching collection folder (`_publications/` or `_projects/`) and use kebab-case filenames.
 
 ## Local Development with Docker (Recommended)
 

@@ -2,7 +2,7 @@
 layout: project
 title: "Project Title"
 description: "A short, engaging description of the project."
-image: "/assets/img/project-placeholder.jpg"
+image: "/assets/images/project-placeholder.jpg"
 technologies:
   - "Python"
   - "PyTorch"

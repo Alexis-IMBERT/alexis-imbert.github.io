@@ -20,8 +20,8 @@ describe 'Docker Development Environment Configuration' do
       expect(dockerfile_content).to match(/^EXPOSE 35729/)
     end
 
-    it 'runs jekyll serve with livereload and force polling' do
-      expect(dockerfile_content).to match(/CMD \["bundle", "exec", "jekyll", "serve".*"--host".*"0\.0\.0\.0".*"--port".*"4000".*"--livereload".*"--force_polling"\]/m)
+    it 'runs jekyll serve with livereload, force polling, and watch' do
+      expect(dockerfile_content).to match(/CMD \["bundle", "exec", "jekyll", "serve".*"--host".*"0\.0\.0\.0".*"--port".*"4000".*"--livereload".*"--watch".*"--force_polling"\]/m)
     end
   end
 

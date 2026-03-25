@@ -62,7 +62,7 @@ This is the easiest method as it guarantees the environment matches the producti
     docker compose up
     ```
     *(If it's your first time or you've made major changes to the Gemfile, run `docker compose up --build`)*
-3.  Open your web browser and go to `http://localhost:8080`.
+3.  Open your web browser and go to `http://localhost:4000`.
 4.  You can now see your changes. The site will automatically reload as you save changes to your Markdown or YAML files.
 5.  To stop the server, press `Ctrl+C` in the terminal.
 
