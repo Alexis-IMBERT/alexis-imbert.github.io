@@ -1,0 +1,18 @@
+{% assign publication_meta = site.data.publications[include.publication.slug] %}
+{% assign publication_title = include.publication.title | default: publication_meta.title | default: include.publication.slug %}
+{% assign publication_authors = include.publication.authors | default: publication_meta.authors %}
+{% assign publication_venue = include.publication.venue | default: publication_meta.venue %}
+<li class="publication-item">
+  <h3><a href="{{ include.publication.url | relative_url }}">{{ publication_title }}</a></h3>
+  {% if publication_authors %}
+    <div class="authors">
+      {% if publication_authors.first %}
+        {{ publication_authors | join: ", " }}
+      {% else %}
+        {{ publication_authors }}
+      {% endif %}
+    </div>
+  {% endif %}
+  {% if publication_venue %}<div class="venue"><em>{{ publication_venue }}</em></div>{% endif %}
+  {% if include.publication.date %}<div class="date">{{ include.publication.date | date: "%B %d, %Y" }}</div>{% elsif include.publication.year %}<div class="date">{{ include.publication.year }}</div>{% endif %}
+</li>

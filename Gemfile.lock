@@ -13,7 +13,6 @@ GEM
     ffi (1.17.3)
     forwardable-extended (2.6.0)
     google-protobuf (3.23.4)
-    google-protobuf (3.23.4-aarch64-linux)
     google-protobuf (3.23.4-arm64-darwin)
     google-protobuf (3.23.4-x86_64-darwin)
     http_parser.rb (0.8.1)
@@ -95,7 +94,6 @@ GEM
     webrick (1.9.2)
 
 PLATFORMS
-  aarch64-linux
   ruby
   universal-darwin-25
 

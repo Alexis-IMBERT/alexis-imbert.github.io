@@ -1,26 +1,17 @@
 ---
 layout: project
 title: "Project Title"
-description: "A short, engaging description of the project."
-image: "/assets/images/project-placeholder.jpg"
-technologies:
-  - "Python"
-  - "PyTorch"
-  - "Docker"
-github_url: "https://github.com/Alexis-IMBERT/project-repo"
-demo_url: "https://demo.alexis-imbert.com/project"
 ---
 
-# Overview
+## Overview
 
-Add a detailed overview of the project here...
+Write the project story here.
 
-## Key Features
+## What matters
 
-- Feature 1
-- Feature 2
-- Feature 3
+- Problem
+- Approach
+- Result
 
-## Architecture
-
-Describe the system architecture, challenges, or methods here.
+Then add metadata in _data/projects.yml using this file name as key.
+Example key for _projects/my-project.md -> my-project

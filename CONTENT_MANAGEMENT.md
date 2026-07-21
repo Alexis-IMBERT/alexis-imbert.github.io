@@ -16,32 +16,47 @@ All projects are stored in the `_projects/` directory. The easiest way to create
 
 ### 2. Add Project Images
 
-Before editing the project file, it is recommended to add any images you want to use:
+Before editing metadata, it is recommended to add any images you want to use:
 - Save your images in the `assets/images/` directory (e.g., `assets/images/my-new-project-cover.jpg`).
 
-### 3. Update Frontmatter Fields
+### 3. Keep Frontmatter Minimal
 
-Open your new `.md` file. At the very top, you will see a block of text surrounded by `---` (the "frontmatter"). Update these required fields:
+Open your new `.md` file. At the very top, you will see a block of text surrounded by `---` (the "frontmatter"). Keep only:
 
 - `title`: The name of your project.
-- `description`: A short, engaging description shown on the projects list.
-- `image`: The path to the cover image you added (e.g., `/assets/images/my-new-project-cover.jpg`). If you don't have one, you can leave the default placeholder.
-- `technologies`: A list of the core tools used:
-  ```yaml
+
+*Note: Keep `layout: project` unchanged.*
+
+### 4. Add Project Metadata in `_data/projects.yml`
+
+Add a key in `_data/projects.yml` using the Markdown file name (without `.md`).
+
+Use these metadata fields:
+
+- `description`: Short summary shown on the projects list.
+- `image`: Cover image path (for example `/assets/images/my-new-project-cover.jpg`).
+- `technologies`: List of tools/technologies.
+- `github_url`: Optional repository link.
+- `demo_url`: Optional live demo link.
+
+Example for `_projects/my-new-project.md`:
+
+```yaml
+my-new-project:
+  description: "A short, engaging description shown on the projects list."
+  image: "/assets/images/my-new-project-cover.jpg"
   technologies:
     - "Python"
     - "React"
-  ```
-- `github_url`: (Optional) The link to the repository source code.
-- `demo_url`: (Optional) The link to a live demo or presentation.
+  github_url: "https://github.com/Alexis-IMBERT/my-new-project"
+  demo_url: "https://demo.alexis-imbert.com/my-new-project"
+```
 
-*Note: Leave the `layout: project` unchanged.*
-
-### 4. Write the Content
+### 5. Write the Content
 
 Below the second `---`, you can write the full content of your project using Markdown. The template provides sections for **Overview**, **Key Features**, and **Architecture**, but you can modify these completely to fit your project.
 
-### 5. Preview Locally
+### 6. Preview Locally
 
 To see how your new project looks before deploying:
 1. Save the file.
@@ -54,13 +69,6 @@ To see how your new project looks before deploying:
 ---
 layout: project
 title: "Awesome 2D Game"
-description: "A fun 2D platformer game built with Python and Pygame."
-image: "/assets/images/awesome-game.jpg"
-technologies:
-  - "Python"
-  - "Pygame"
-github_url: "https://github.com/Alexis-IMBERT/awesome-game"
-demo_url: "https://demo.alexis-imbert.com/awesome-game"
 ---
 
 # Overview
@@ -72,4 +80,16 @@ Awesome 2D Game is a fast-paced platformer with multiple levels.
 - Fluid movement
 - Custom tile engine
 - 3 distinct levels
+```
+
+```yaml
+# _data/projects.yml
+sample-game:
+  description: "A fun 2D platformer game built with Python and Pygame."
+  image: "/assets/images/awesome-game.jpg"
+  technologies:
+    - "Python"
+    - "Pygame"
+  github_url: "https://github.com/Alexis-IMBERT/awesome-game"
+  demo_url: "https://demo.alexis-imbert.com/awesome-game"
 ```

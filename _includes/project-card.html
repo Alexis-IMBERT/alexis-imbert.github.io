@@ -1,0 +1,21 @@
+{% assign project_meta = site.data.projects[include.project.slug] %}
+{% assign project_title = include.project.title | default: project_meta.title | default: include.project.slug %}
+{% assign project_description = include.project.description | default: project_meta.description %}
+{% assign project_image = include.project.image | default: project_meta.image %}
+<div class="col">
+  <div class="card h-100 hover-shadow">
+    <a href="{{ include.project.url | relative_url }}" class="text-decoration-none text-dark">
+      {% if project_image %}
+      <img src="{{ project_image | relative_url }}" class="card-img-top" alt="{{ project_title }}" style="object-fit: cover; height: 200px;">
+      {% else %}
+      <div class="card-img-top bg-secondary d-flex align-items-center justify-content-center" style="height: 200px;">
+        <i class="fas fa-image fa-3x text-white-50"></i>
+      </div>
+      {% endif %}
+      <div class="card-body">
+        <h5 class="card-title">{{ project_title }}</h5>
+        <p class="card-text">{{ project_description }}</p>
+      </div>
+    </a>
+  </div>
+</div>

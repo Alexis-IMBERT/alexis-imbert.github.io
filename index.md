@@ -9,37 +9,38 @@ author:
 og_type: website
 twitter_card: summary_large_image
 ---
+{% assign home_data = site.data.pages.home %}
 
 # Welcome to My Academic Portfolio
 
-[📄 Download CV (PDF)]({{ '/assets/CV_Alexis_IMBERT.pdf' | relative_url }}){: .btn .btn-primary download="CV_Alexis_IMBERT.pdf"}
+<p><a class="btn btn-primary" href="{{ home_data.cv_download.href | default: '/assets/CV_Alexis_IMBERT.pdf' | relative_url }}" download="{{ home_data.cv_download.filename | default: 'CV_Alexis_IMBERT.pdf' }}">{{ home_data.cv_download.label | default: '📄 Download CV (PDF)' }}</a></p>
 
+{% for paragraph in home_data.intro %}
+{{ paragraph }}
 
-I'm **Alexis Imbert**, a PhD student in **Graph Neural Networks and Neuroscience** at INSA Rouen Normandie, Normandy, France.
-
-My research focuses on applying Graph Neural Networks to neuroscience problems, exploring how neural data can be modeled and understood through graph-based deep learning approaches.
+{% endfor %}
 
 ## Research Interests
 
-- **Graph Neural Networks (GNNs)** - Architecture design, scalability, interpretability
-- **Neuroscience Applications** - Neural data analysis, brain connectivity modeling
-- **Deep Learning** - Representation learning, optimization, evaluation
+{% for interest in home_data.research_interests %}
+- **{{ interest.title }}** - {{ interest.description }}
+{% endfor %}
 
 ## Quick Navigation
 
 Explore my work through these sections:
 
-- **📚 [Publications](/publications/)** - Research papers, preprints, and presentations
-- **💻 [Projects](/projects/)** - Open-source contributions and technical projects
-- **👤 [Contact](/contact/)** - Get in touch
+{% for link in home_data.quick_navigation %}
+- **{{ link.icon }} [{{ link.label }}]({{ link.href }})** - {{ link.description }}
+{% endfor %}
 
 ---
 
 ## Let's Connect
 
-Interested in collaboration or have questions about my research?
+{{ home_data.connect.text | default: 'Interested in collaboration or have questions about my research?' }}
 
-📧 [Contact me via email](mailto:{{ site.email | default: site.author.email }})
+📧 [{{ home_data.connect.email_label | default: 'Contact me via email' }}](mailto:{{ site.email | default: site.author.email }})
 
 Or find me on:
 {% include external-profiles.html %}

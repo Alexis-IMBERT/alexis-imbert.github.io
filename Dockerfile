@@ -11,14 +11,13 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     curl \
     && rm -rf /var/lib/apt/lists/*
 
-# Install Bundler
-RUN gem install bundler
-
-# Copy Gemfile and Gemfile.lock from Story 1.1
+# Copy Bundler config and local gem cache before installing
+COPY .bundle/ .bundle/
 COPY Gemfile Gemfile.lock ./
+COPY vendor/bundle/ruby/2.6.0/cache/ vendor/cache/
 
 # Install Ruby gems
-RUN bundle install
+RUN bundle install --local
 
 # Expose port for Jekyll
 EXPOSE 4000

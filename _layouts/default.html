@@ -7,23 +7,31 @@
   {% seo %}
   
   {% if page.collection == 'publications' %}
-  <meta name="citation_title" content="{{ page.title | escape }}">
-  {% if page.authors %}
-    {% if page.authors.first %}
-      {% for author in page.authors %}
+  {% assign publication_meta = site.data.publications[page.slug] %}
+  {% assign publication_title = page.title | default: publication_meta.title %}
+  {% assign publication_authors = page.authors | default: publication_meta.authors %}
+  {% assign publication_venue = page.venue | default: publication_meta.venue %}
+  {% assign publication_resources = page.resources | default: publication_meta.resources %}
+  <meta name="citation_title" content="{{ publication_title | escape }}">
+  {% if publication_authors %}
+    {% if publication_authors.first %}
+      {% for author in publication_authors %}
         <meta name="citation_author" content="{{ author | escape }}">
       {% endfor %}
     {% else %}
-      <meta name="citation_author" content="{{ page.authors | escape }}">
+      <meta name="citation_author" content="{{ publication_authors | escape }}">
     {% endif %}
   {% endif %}
   {% if page.date %}
   <meta name="citation_publication_date" content="{{ page.date | date: '%Y/%m/%d' }}">
   {% endif %}
-  {% if page.venue %}
-  <meta name="citation_journal_title" content="{{ page.venue | escape }}">
+  {% if publication_venue %}
+  <meta name="citation_journal_title" content="{{ publication_venue | escape }}">
   {% endif %}
-  {% if page.pdf %}
+  {% assign publication_pdf_resource = publication_resources | where: "type", "pdf" | first %}
+  {% if publication_pdf_resource and publication_pdf_resource.href %}
+  <meta name="citation_pdf_url" content="{{ publication_pdf_resource.href | absolute_url }}">
+  {% elsif page.pdf %}
   <meta name="citation_pdf_url" content="{{ page.pdf | absolute_url }}">
   {% endif %}
   {% endif %}
@@ -45,10 +53,16 @@
     .site-header {
       background-color: #f8f9fa;
       border-bottom: 1px solid #e9ecef;
-      padding: 1rem 0;
+      padding: 1.25rem 0;
       position: sticky;
       top: 0;
       z-index: 100;
+      transition: padding 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    body.hero-condensed .site-header {
+      padding: 0.6rem 0;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
     }
 
     .wrapper {
@@ -58,13 +72,40 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 1.5rem;
+    }
+
+    .site-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.9rem;
+      min-width: 0;
+      text-decoration: none;
+    }
+
+    .site-avatar {
+      width: 96px;
+      height: 96px;
+      object-fit: cover;
+      border-radius: 1rem;
+      border: 3px solid #fff;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+      flex: 0 0 auto;
+      transition: width 0.25s ease, height 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+    }
+
+    body.hero-condensed .site-avatar {
+      width: 56px;
+      height: 56px;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
     }
 
     .site-title {
-      font-size: 1.5rem;
+      font-size: 1.75rem;
       font-weight: 700;
       color: #212529;
       text-decoration: none;
+      line-height: 1.1;
     }
 
     .site-title:hover {
@@ -311,6 +352,24 @@
         border-bottom: none;
       }
 
+      .site-brand {
+        gap: 0.85rem;
+      }
+
+      .site-avatar {
+        width: 72px;
+        height: 72px;
+      }
+
+      body.hero-condensed .site-avatar {
+        width: 48px;
+        height: 48px;
+      }
+
+      .site-title {
+        font-size: 1.45rem;
+      }
+
       main h1 {
         font-size: 2rem;
       }
@@ -372,5 +431,23 @@
   <footer class="site-footer">
     <p>&copy; {{ 'now' | date: "%Y" }} {{ site.title }}. All rights reserved.</p>
   </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const heroImage = document.querySelector('.site-avatar');
+
+      if (!heroImage) {
+        return;
+      }
+
+      const updateHeroState = function() {
+        document.body.classList.toggle('hero-condensed', window.scrollY > 48);
+      };
+
+      updateHeroState();
+      window.addEventListener('scroll', updateHeroState, { passive: true });
+      window.addEventListener('resize', updateHeroState);
+    });
+  </script>
 </body>
 </html>

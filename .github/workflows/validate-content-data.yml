@@ -1,0 +1,28 @@
+name: Validate Content Data Keys
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-slugs:
+    name: Validate project/publication slugs
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.2"
+
+      - name: Validate data keys against markdown slugs
+        run: bash spec/validate_data_slug_keys.sh

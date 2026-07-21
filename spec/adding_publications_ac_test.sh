@@ -10,6 +10,7 @@ set -e
 
 GUIDE_FILE="docs/adding-publications.md"
 TEMPLATE_FILE="_publications/_TEMPLATE.md"
+PUBLICATIONS_DATA_FILE="_data/publications.yml"
 
 if [ ! -f "$GUIDE_FILE" ]; then
     echo "ERROR: $GUIDE_FILE does not exist"
@@ -18,6 +19,11 @@ fi
 
 if [ ! -f "$TEMPLATE_FILE" ]; then
     echo "ERROR: $TEMPLATE_FILE does not exist"
+    exit 1
+fi
+
+if [ ! -f "$PUBLICATIONS_DATA_FILE" ]; then
+    echo "ERROR: $PUBLICATIONS_DATA_FILE does not exist"
     exit 1
 fi
 
@@ -31,20 +37,32 @@ if ! grep -q "_TEMPLATE.md" "$GUIDE_FILE"; then
     exit 1
 fi
 
-echo "Testing AC2: required frontmatter fields explained..."
-for field in title date authors venue; do
+echo "Testing AC2: required fields and metadata location explained..."
+for field in title date; do
     if ! grep -q "\`$field\`: \*\*Required\*\*" "$GUIDE_FILE"; then
         echo "FAILED: Missing required explanation for field: $field"
         exit 1
     fi
 done
 
-for field in pdf hal doi bibtex slides video code; do
-    if ! grep -q "\`$field\`: \*\*Optional\*\*" "$GUIDE_FILE"; then
-        echo "FAILED: Missing optional explanation for field: $field"
+for field in authors venue; do
+    if ! grep -q "\`$field\`: \*\*Required in \`_data/publications.yml\`\*\*" "$GUIDE_FILE"; then
+        echo "FAILED: Missing required-in-data explanation for field: $field"
         exit 1
     fi
 done
+
+for field in resources bibtex; do
+    if ! grep -q "\`$field\`: \*\*Optional in \`_data/publications.yml\`\*\*" "$GUIDE_FILE"; then
+        echo "FAILED: Missing optional-in-data explanation for field: $field"
+        exit 1
+    fi
+done
+
+if ! grep -q "_data/publications.yml" "$GUIDE_FILE"; then
+    echo "FAILED: Missing mention of _data/publications.yml metadata registry"
+    exit 1
+fi
 
 echo "Testing AC3: example publication file..."
 if ! grep -qi "## Example File" "$GUIDE_FILE"; then
@@ -67,8 +85,15 @@ if ! grep -q "Total target: 10 minutes" "$GUIDE_FILE"; then
 fi
 
 echo "Testing template alignment with guide..."
-if ! grep -q "authors:" "$TEMPLATE_FILE"; then
-    echo "FAILED: Template authors field is not a list"
+for field in "layout: publication" "title:" "date:"; do
+    if ! grep -q "$field" "$TEMPLATE_FILE"; then
+        echo "FAILED: Template missing expected field: $field"
+        exit 1
+    fi
+done
+
+if grep -q "authors:" "$TEMPLATE_FILE"; then
+    echo "FAILED: Template still contains authors; metadata should be centralized in _data/publications.yml"
     exit 1
 fi
 if grep -q "demo:" "$GUIDE_FILE"; then

@@ -1,0 +1,53 @@
+sample-publication:
+  authors:
+    - "Alexis Imbert"
+    - "Jane Doe"
+  venue: "Journal of Artificial Intelligence Research"
+  abstract: "This abstract explains that LLMs are very cool and can write reviews."
+  resources:
+    - type: pdf
+      label: "Download PDF"
+      href: /assets/pdf/sample-publication.pdf
+      download: true
+    - type: hal
+      label: "HAL"
+      href: https://hal.science/hal-00000001
+      new_tab: true
+    - type: doi
+      label: "DOI"
+      href: https://doi.org/10.1234/jair.2026.001
+      new_tab: true
+    - type: slides
+      label: "View Slides"
+      href: https://example.com/slides
+      new_tab: true
+    - type: video
+      label: "Watch Presentation"
+      href: https://example.com/video
+      new_tab: true
+    - type: code
+      label: "View Code"
+      href: https://github.com/alexis-imbert/sample
+      new_tab: true
+  bibtex: |
+    @article{imbert2026llm,
+      title={Large Language Models for Automating Scientific Reviews},
+      author={Imbert, Alexis and Doe, Jane},
+      journal={Journal of Artificial Intelligence Research},
+      volume={76},
+      pages={101--120},
+      year={2026},
+      publisher={AI Access Foundation}
+    }
+
+partial-publication:
+  authors:
+    - "Alexis Imbert"
+  venue: "Local Meetup"
+
+test-publication:
+  authors:
+    - "John Doe"
+    - "Jane Smith"
+  venue: "Test Conference"
+  abstract: "This is a test abstract."

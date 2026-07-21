@@ -1,6 +1,13 @@
 <header class="site-header">
   <div class="wrapper">
+    {% if page.url == '/' or page.url == '/about/' %}
+    <a class="site-brand" href="{{ '/' | relative_url }}" aria-label="Go to home page">
+      <img class="site-avatar" src="{{ '/assets/images/alexis imbert.jpeg' | relative_url }}" alt="Alexis Imbert portrait">
+      <span class="site-title">{{ site.title }}</span>
+    </a>
+    {% else %}
     <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    {% endif %}
     <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu">
       <span></span>
       <span></span>

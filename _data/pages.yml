@@ -1,0 +1,94 @@
+about:
+  cv_download:
+    href: /assets/CV_Alexis_IMBERT.pdf
+    filename: CV_Alexis_IMBERT.pdf
+    label: "📄 Download CV (PDF)"
+  skills:
+    # categories:
+    #   - name: "Programming"
+    #     items:
+    #       - "Python"
+    #       - "R"
+    #       - "SQL"
+    #   - name: "Machine Learning / Deep Learning"
+    #     items:
+    #       - "PyTorch"
+    #       - "scikit-learn"
+    #       - "Graph Neural Networks"
+    #   - name: "Tools"
+    #     items:
+    #       - "Git"
+    #       - "Docker"
+    #       - "Linux"
+  # academic_background:
+  #   - title: "PhD in Computer Science"
+  #     meta: "Expected 2024 - 2027 • INSA Rouen Normandie / LITIS Lab"
+  #     description: "Research focus: Graph Neural Networks, Machine Learning, and applications in Neuroscience."
+  #   - title: "Master of Science in Data Science / Computer Science"
+  #     meta: "2022 - 2024 • INSA Rouen Normandie"
+  #     description: "Focus on machine learning, deep learning, and intelligent systems."
+  #   - title: "Bachelor of Science in Computer Science"
+  #     meta: "2019 - 2022 • University / INSA"
+  #     description: "Extensive coursework in mathematics, algorithms, and software engineering."
+  # professional_experience:
+  #   - title: "PhD Researcher"
+  #     meta: "Oct 2024 - Present • LITIS Laboratory, INSA Rouen Normandie"
+  #     bullets:
+  #       - "Conducting research on Graph Neural Networks (GNNs)."
+  #       - "Applying deep learning models to neurodegenerative disease diagnosis."
+  #   - title: "Research Intern"
+  #     meta: "Apr 2024 - Sep 2024 • LITIS Laboratory"
+  #     bullets:
+  #       - "Investigated state-of-the-art machine learning approaches for brain imaging data."
+  #       - "Developed proof-of-concept pipelines for graph-based inference."
+  #   - title: "Software Engineering Intern"
+  #     meta: "Jun 2023 - Aug 2023 • Tech Company"
+  #     bullets:
+  #       - "Developed and maintained data processing workflows."
+  #       - "Collaborated with senior engineers on scalable database architectures."
+
+home:
+  cv_download:
+    href: /assets/CV_Alexis_IMBERT.pdf
+    filename: CV_Alexis_IMBERT.pdf
+    label: "📄 Download CV (PDF)"
+  intro:
+    - "I'm **Alexis Imbert**, a PhD student in **Graph Neural Networks and Neuroscience** at INSA Rouen Normandie, Normandy, France."
+    - "My research focuses on applying Graph Neural Networks to neuroscience problems, exploring how neural data can be modeled and understood through graph-based deep learning approaches."
+  research_interests:
+    - title: "Graph Neural Networks (GNNs)"
+      description: "Architecture design, scalability, interpretability"
+    - title: "Neuroscience Applications"
+      description: "Neural data analysis, brain connectivity modeling"
+    - title: "Deep Learning"
+      description: "Representation learning, optimization, evaluation"
+  quick_navigation:
+    - label: "Publications"
+      icon: "📚"
+      href: "/publications/"
+      description: "Research papers, preprints, and presentations"
+    - label: "Projects"
+      icon: "💻"
+      href: "/projects/"
+      description: "Open-source contributions and technical projects"
+    - label: "Contact"
+      icon: "👤"
+      href: "/contact/"
+      description: "Get in touch"
+  connect:
+    text: "Interested in collaboration or have questions about my research?"
+    email_label: "Contact me via email"
+
+contact:
+  intro: "Thank you for your interest. If you want to reach out for research discussions, project collaborations, or other academic and professional opportunities, please use the link below to send me an email."
+  cta_label: "Email Alexis"
+  cta_aria_label: "Send an email to Alexis"
+  privacy_note: "This link will open your default email client. No forms or tracking are used here to respect your privacy."
+
+publications_page:
+  heading: "Publications"
+  empty_message: "No publications published yet."
+
+projects_page:
+  heading: "Projects"
+  empty_message: "No projects published yet."

@@ -1,0 +1,11 @@
+sample-project:
+  description: "A wonderful sample project description that explains everything."
+  image: /assets/images/sample-project-thumb.jpg
+  technologies:
+    - Ruby
+    - Jekyll
+    - Docker
+
+github-project:
+  description: "Project example with a GitHub repository link."
+  github_url: https://github.com/abc/def

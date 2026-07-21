@@ -1,27 +1,34 @@
 ---
 layout: default
 ---
+{% assign publication_meta = site.data.publications[page.slug] %}
+{% assign publication_title = page.title | default: publication_meta.title | default: page.slug %}
+{% assign publication_authors = page.authors | default: publication_meta.authors %}
+{% assign publication_venue = page.venue | default: publication_meta.venue %}
+{% assign publication_abstract = page.abstract | default: publication_meta.abstract %}
+{% assign publication_resources = page.resources | default: publication_meta.resources %}
+{% assign publication_bibtex = page.bibtex | default: publication_meta.bibtex %}
 
 <article class="publication">
   <header class="publication-header">
-    <h1 class="publication-title">{{ page.title }}</h1>
+    <h1 class="publication-title">{{ publication_title }}</h1>
     
-    {% if page.authors %}
+    {% if publication_authors %}
     <p class="authors">
-      {% if page.authors.first %}
-        {{ page.authors | join: ", " }}
+      {% if publication_authors.first %}
+        {{ publication_authors | join: ", " }}
       {% else %}
-        {{ page.authors }}
+        {{ publication_authors }}
       {% endif %}
     </p>
     {% endif %}
     
     <div class="publication-meta">
-      {% if page.venue %}
-      <span class="venue">{{ page.venue }}</span>
+      {% if publication_venue %}
+      <span class="venue">{{ publication_venue }}</span>
       {% endif %}
       
-      {% if page.venue and page.date %}
+      {% if publication_venue and page.date %}
       <span class="meta-separator">&bull;</span>
       {% endif %}
 
@@ -31,10 +38,10 @@ layout: default
     </div>
   </header>
   
-  {% if page.abstract %}
+  {% if publication_abstract %}
   <section class="abstract" aria-labelledby="abstract-heading">
     <h2 id="abstract-heading">Abstract</h2>
-    <p>{{ page.abstract }}</p>
+    <p>{{ publication_abstract }}</p>
   </section>
   {% endif %}
   
@@ -42,7 +49,31 @@ layout: default
     {{ content }}
   </div>
   
-  {% if page.pdf or page.hal or page.doi or page.bibtex or page.slides or page.video or page.code %}
+  {% if publication_resources and publication_resources.size > 0 %}
+  <section class="resources" aria-labelledby="resources-heading">
+    <h2 id="resources-heading">Resources</h2>
+    <ul class="resource-links">
+      {% for resource in publication_resources %}
+      <li>
+        <a href="{{ resource.href }}" class="btn btn-{{ resource.type | default: 'resource' }}" {% if resource.download %}download{% endif %}{% if resource.new_tab %} target="_blank" rel="noopener noreferrer"{% endif %}>
+          {{ resource.label | default: resource.type | upcase }}
+        </a>
+      </li>
+      {% endfor %}
+      {% if publication_bibtex %}
+      <li>
+        <details>
+          <summary class="btn btn-bibtex">Show BibTeX</summary>
+          <div class="bibtex-container">
+            <button class="copy-bibtex-btn" aria-label="Copy BibTeX to clipboard" onclick="copyBibtex(this)">Copy</button>
+            <pre><code id="bibtex-content">{{ publication_bibtex | escape }}</code></pre>
+          </div>
+        </details>
+      </li>
+      {% endif %}
+    </ul>
+  </section>
+  {% elsif page.pdf or page.hal or page.doi or publication_bibtex or page.slides or page.video or page.code %}
   <section class="resources" aria-labelledby="resources-heading">
     <h2 id="resources-heading">Resources</h2>
     <ul class="resource-links">
@@ -74,13 +105,13 @@ layout: default
       <li><a href="{{ page.code }}" class="btn btn-code" target="_blank" rel="noopener noreferrer">View Code</a></li>
       {% endif %}
       
-      {% if page.bibtex %}
+      {% if publication_bibtex %}
       <li>
         <details>
           <summary class="btn btn-bibtex">Show BibTeX</summary>
           <div class="bibtex-container">
             <button class="copy-bibtex-btn" aria-label="Copy BibTeX to clipboard" onclick="copyBibtex(this)">Copy</button>
-            <pre><code id="bibtex-content">{{ page.bibtex | escape }}</code></pre>
+            <pre><code id="bibtex-content">{{ publication_bibtex | escape }}</code></pre>
           </div>
         </details>
       </li>
@@ -89,8 +120,7 @@ layout: default
   </section>
   {% endif %}
 </article>
-
-{% if page.bibtex %}
+{% if publication_bibtex %}
 <script>
 function copyBibtex(btn) {
   var codeElement = btn.nextElementSibling.querySelector('code') || document.getElementById('bibtex-content');

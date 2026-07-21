@@ -1,34 +1,48 @@
 ---
 layout: default
 ---
+{% assign project_meta = site.data.projects[page.slug] %}
+{% assign project_title = page.title | default: project_meta.title | default: page.slug %}
+{% assign project_description = page.description | default: project_meta.description %}
+{% assign project_image = page.image | default: project_meta.image %}
+{% assign project_technologies = page.technologies | default: project_meta.technologies %}
+{% assign project_github_url = page.github_url | default: project_meta.github_url %}
+{% assign project_demo_url = page.demo_url | default: project_meta.demo_url %}
 <article class="project-detail">
   <header>
-    <h1 class="project-title">{{ page.title }}</h1>
-    <p class="project-description">{{ page.description }}</p>
+    <h1 class="project-title">{{ project_title }}</h1>
+    <p class="project-description">{{ project_description }}</p>
   </header>
 
-  {% if page.image %}
+  {% if project_image %}
   <div class="project-image">
-    <img src="{{ page.image | relative_url }}" alt="Screenshot or image for {{ page.title }}" />
+    <img src="{{ project_image | relative_url }}" alt="Screenshot or image for {{ project_title }}" />
   </div>
   {% endif %}
 
-  {% if page.technologies %}
+  {% if project_technologies %}
   <div class="project-technologies">
     <h3>Technologies Used</h3>
     <ul class="technology-list">
-      {% for tech in page.technologies %}
+      {% for tech in project_technologies %}
       <li class="badge">{{ tech }}</li>
       {% endfor %}
     </ul>
   </div>
   {% endif %}
 
-  {% if page.github_url %}
+  {% if project_github_url or project_demo_url %}
   <div class="project-links" style="margin-top: 1.5rem; margin-bottom: 2rem;">
-    <a href="{{ page.github_url }}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+    {% if project_github_url %}
+    <a href="{{ project_github_url }}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
       View on GitHub
     </a>
+    {% endif %}
+    {% if project_demo_url %}
+    <a href="{{ project_demo_url }}" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="margin-left: 0.75rem;">
+      View Demo
+    </a>
+    {% endif %}
   </div>
   {% endif %}
 

@@ -1,6 +1,6 @@
 # Site settings
 title: Alexis Imbert
-email: contact@alexis-imbert.com
+email: alexis.imbert@insa-rouen.fr
 description: "Academic portfolio showcasing research, publications, and projects. PhD student at INSA Rouen Normandie focused on Graph Neural Networks and Neuroscience."
 baseurl: ""
 url: "https://alexis-imbert.github.io"
@@ -67,10 +67,10 @@ paginate_path: "/blog/page:num/"
 github_username: Alexis-IMBERT
 linkedin_username: alexisimbert
 orcid_id: "0009-0000-4677-0981"
-researchgate_url: ""
-researchgate_profile: "Alexis-Imbert"
+researchgate_url: "https://www.researchgate.net/profile/Alexis-Imbert-3"
+researchgate_profile: "Alexis-Imbert-3"
 scholar_url: ""
-scholar_userid: "dummy_scholar_id"
+scholar_userid: ""
 
 # Exclude from processing
 exclude:
@@ -81,8 +81,6 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
-  - _bmad/
-  - _bmad-output/
   - spec/
   - Dockerfile
   - docker-compose.yml
