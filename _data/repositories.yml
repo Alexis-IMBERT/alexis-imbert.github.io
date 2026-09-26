@@ -1,14 +1,22 @@
 github_users:
-  - torvalds
-  - alshedivat
+  - alexis-imbert
 
 repo_description_lines_max: 2
 
 github_repos:
+  # - gauzias/ABCD_dataset
+  # - gauzias/sulcal_graph
+  # - sukjulian/LOGML-cortical
+  # - Alexis-IMBERT/graph-learning
+  - Lightning-AI/pytorch-lightning
+  - ultralytics/ultralytics
+  - scikit-learn/scikit-learn
+  - Zimberts/MediaVore
+  - SkytAsul/INSA-Typst-Template
   - alshedivat/al-folio
   - jekyll/jekyll
-  - twbs/bootstrap
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - mathjax/MathJax
-  - jpswalsh/academicons
+  # - twbs/bootstrap
+  # - jquery/jquery
+  # - FortAwesome/Font-Awesome
+  # - mathjax/MathJax
+  # - jpswalsh/academicons
