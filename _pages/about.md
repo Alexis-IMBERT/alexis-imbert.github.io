@@ -9,9 +9,9 @@ profile:
   image: prof_pic.jpg
   image_circular: true # crops the image to make it circular
   more_info: #>
-     #<p>LITIS INSA Rouen Normandie</p>
-     #<p>685 avenue de l'Université</p>
-     #<p>76 800 Saint Etienne du Rouvray</p>
+    #<p>LITIS INSA Rouen Normandie</p>
+    #<p>685 avenue de l'Université</p>
+    #<p>76 800 Saint Etienne du Rouvray</p>
 
 selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
@@ -28,6 +28,7 @@ latest_posts:
 ---
 
 <!-- Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](https://www.reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder. -->
+
 Welcome! I am Alexis Imbert, a Machine Learning Researcher and PhD student at the LITIS laboratory, INSA Rouen Normandy.
 
 My research sits at the intersection of geometric deep learning and neuroscience. I work on analyzing brain anatomy by representing cortical surfaces as graphs. My goal is to design Graph Neural Networks that capture complex hierarchical information to better understand cognitive functions, while tackling domain shifts to ensure these models generalize well across different MRI datasets.
