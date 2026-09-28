@@ -26,10 +26,6 @@ latest_posts:
   limit: 3
 ---
 
-<!-- markdownlint-disable MD033 -->
-<nav aria-label="Idioma" markdown="0"><a {% static_href %}href="{{ site.baseurl }}/"{% endstatic_href %}>English</a> · <a {% static_href %}href="{{ site.baseurl }}/fr/"{% endstatic_href %}>Français</a> · <a {% static_href %}href="{{ site.baseurl }}/es/"{% endstatic_href %}>Español</a></nav>
-<!-- markdownlint-enable MD033 -->
-
 ¡Bienvenido! Soy Alexis Imbert, investigador en aprendizaje automático y doctorando en el laboratorio LITIS de la INSA Rouen Normandie.
 
 Mi investigación se sitúa en la intersección del aprendizaje profundo geométrico y las neurociencias. Trabajo en el análisis de la anatomía cerebral mediante la representación de las superficies corticales como grafos. Mi objetivo es diseñar redes neuronales de grafos capaces de captar información jerárquica compleja para comprender mejor las funciones cognitivas, al mismo tiempo que abordo los cambios de dominio para garantizar que estos modelos se generalicen a distintos conjuntos de datos de resonancia magnética.
