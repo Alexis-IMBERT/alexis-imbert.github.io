@@ -1,17 +1,19 @@
 ---
 layout: page
 permalink: /repositories/
-title: Repositories
-description: All repositories I'm using and/or I contributed.
-lang: en
+title: Dépôts
+description: Ensemble des dépôts que j'utilise et/ou auxquels j'ai contribué.
+lang: fr
 page_id: repositories
 nav: true
 nav_order: 4
 ---
 
+<!-- _pages/repositories.fr.md -->
+
 {% if site.data.repositories.github_users %}
 
-## GitHub users
+## Utilisateurs GitHub
 
 <div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
   {% for user in site.data.repositories.github_users %}
@@ -39,7 +41,7 @@ nav_order: 4
 
 {% if site.data.repositories.github_repos %}
 
-## GitHub Repositories
+## Dépôts GitHub
 
 <div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
   {% for repo in site.data.repositories.github_repos %}
