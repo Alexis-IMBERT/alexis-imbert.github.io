@@ -1,10 +1,9 @@
 cv:
   name: Alexis Imbert
-  label: PhD Student in Computer Science
+  headline: PhD Student in Computer Science
   email: alexis.imbert@insa-rouen.fr
   location: Rouen, France
-  image: "assets/img/prof_pic.jpg"
-  summary: # TODO: Add a summary about yourself. This will be displayed on the cv.
+  photo: "../assets/img/prof_pic.jpg"
 
   social_networks:
     - network: GitHub
@@ -12,76 +11,69 @@ cv:
     - network: LinkedIn
       username: alexisimbert
 
-  address:
-    street: 685 avenue de l'Université
-    city: Saint Etienne du Rouvray
-    region: Normandy
-    postalCode: 76800
-    countryCode: FR
-
   sections:
     Education:
       - institution: INSA Rouen Normandie
         location: Rouen, France
         url: https://www.insa-rouen.fr/
         area: Data Science and Artificial Intelligence - Engineering - Informatique et Technologie de l'Information (ITI)
-        studyType: Ingenieur (Master's degree)
+        degree: Ingenieur (Master's degree)
         start_date: 2021
         end_date: 2024
         # score: ""
         # courses: "Theory of Relativity"
         # highlights:
-          # - Description 1.
-          # - Description 2.
+        # - Description 1.
+        # - Description 2.
 
       - institution: Rouen University
         location: Rouen, France
         url: https://formation.univ-rouen.fr/fr/catalogue-de-l-offre-de-formation/master-lmd-XB/master-science-des-donnees-L5HXA4SK.html
-        area: Data Science - Master 
-        studyType: Master's degree
+        area: Data Science - Master
+        degree: Master's degree
         start_date: 2023
         end_date: 2024
         # score: ""
         # courses: "Theory of Relativity"
         # highlights:
-          # - Description 1.
-          # - Description 2.
+        # - Description 1.
+        # - Description 2.
 
       - institution: RMIT
         location: Melbourne, Australia
         url: https://www.rmit.edu.au/
         area: Computer Science
-        studyType: Academic Exchange Program
+        degree: Academic Exchange Program
         start_date: "2023-02"
         end_date: "2023-07"
         # score: ""
         # courses: "Theory of Relativity"
         # highlights:
-          # - Description 1.
-          # - Description 2.
+        # - Description 1.
+        # - Description 2.
 
       - institution: Polytech Sorbonne
         location: Paris, France
         url: https://www.polytech.sorbonne-universite.fr/
         area: General Engineering
-        studyType: Preparatory Engineering Program - PEIP
+        degree: Preparatory Engineering Program - PEIP
         start_date: 2019
         end_date: 2021
         # score: ""
         # courses: "Theory of Relativity"
         # highlights:
-          # - Description 1.
-          # - Description 2.
+        # - Description 1.
+        # - Description 2.
 
-    # Experience:
+    Experience:
       - company: INSA Rouen Normandie
         position: PhD Student in Computer Science
         location: Rouen, France
         start_date: 2024
-        end_date: Present
+        end_date: present
         summary: >-
           Thesis supervised by Paul Honeine (University of Rouen), Guillaume Auzias (Institut
-          de Neurosciences de la Timone, CNRS, Aix-Marseille University), and Benoˆıt Ga¨uz`ere
+          de Neurosciences de la Timone, CNRS, Aix-Marseille University), and Benoit Gauzere
           (INSA Rouen Normandie). Funded by the French National Research Agency as part of
           the FAMOUS project. Research Questions:
           1. Hierarchical Information Analysis in Brain Graphs: How can graph machine learning
@@ -97,7 +89,6 @@ cv:
       #   highlights:
       #     - Description 1.
       #     - Description 2.
-
       - company: Teklia, Paris, France
         position: Research Intern
         location: Paris, France
@@ -107,7 +98,6 @@ cv:
         # highlights:
         #   - Relativity
         #   - Description 2.
-
 
       # - company: Kaiser Wilhelm Institute for Physics
       #   position: Director
@@ -128,62 +118,62 @@ cv:
       #   end_date: 1911
 
     # Volunteer:
-      # - company: People's Climate March
-      #   position: Lead Organizer
-      #   location: Zurich, Switzerland
-      #   start_date: 2014-04-01
-      #   end_date: 2015-07-01
-      #   summary: Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.
-      #   highlights:
-      #     - "Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march."
-      #     - "Men of the year 2014 by Time magazine"
+    # - company: People's Climate March
+    #   position: Lead Organizer
+    #   location: Zurich, Switzerland
+    #   start_date: 2014-04-01
+    #   end_date: 2015-07-01
+    #   summary: Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.
+    #   highlights:
+    #     - "Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march."
+    #     - "Men of the year 2014 by Time magazine"
 
     # Awards:
-      # - title: Nobel Prize in Physics
-      #   authors:
-      #     - "Royal Swedish Academy of Sciences"
-      #   date: 1921-11-01
-      #   awarder: Royal Swedish Academy of Sciences
-      #   url: https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/
-      #   summary: The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'
+    # - title: Nobel Prize in Physics
+    #   authors:
+    #     - "Royal Swedish Academy of Sciences"
+    #   date: 1921-11-01
+    #   awarder: Royal Swedish Academy of Sciences
+    #   url: https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/
+    #   summary: The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'
 
-      # - title: Max Planck Medal
-      #   authors:
-      #     - "German Physical Society"
-      #   date: 2029
-      #   awarder: German Physical Society
-      #   summary: Awarded for outstanding scientific achievement
+    # - title: Max Planck Medal
+    #   authors:
+    #     - "German Physical Society"
+    #   date: 2029
+    #   awarder: German Physical Society
+    #   summary: Awarded for outstanding scientific achievement
 
     # Publications:
-      # - title: Zur Elektrodynamik bewegter Körper
-      #   authors:
-      #     - Albert Einstein
-      #   publisher: Annalen der Physik
-      #   releaseDate: 1905-06-30
-      #   url: https://en.wikisource.org/wiki/Translation:On_the_Electrodynamics_of_Moving_Bodies
-      #   summary: It concerned an interpretation of the Michelson–Morley experiment and the properties of light and time. Special relativity incorporates the principle that the speed of light is the same for all inertial observers regardless of the state of motion of the source.
+    # - title: Zur Elektrodynamik bewegter Körper
+    #   authors:
+    #     - Albert Einstein
+    #   publisher: Annalen der Physik
+    #   releaseDate: 1905-06-30
+    #   url: https://en.wikisource.org/wiki/Translation:On_the_Electrodynamics_of_Moving_Bodies
+    #   summary: It concerned an interpretation of the Michelson–Morley experiment and the properties of light and time. Special relativity incorporates the principle that the speed of light is the same for all inertial observers regardless of the state of motion of the source.
 
-      # - title: Über einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt
-      #   authors:
-      #     - Albert Einstein
-      #   publisher: Annalen der Physik
-      #   releaseDate: 1905-03-18
-      #   url: https://de.wikisource.org/wiki/Über_einen_die_Erzeugung_und_Verwandlung_des_Lichtes_betreffenden_heuristischen_Gesichtspunkt
-      #   summary: In the second paper, he applied the quantum theory to light to explain the photoelectric effect. In particular, he used the idea of light quanta (photons) to explain experimental results, but stressed the importance of the experimental results. The importance of his work on the photoelectric effect earned him the Nobel Prize in Physics in 1921.
+    # - title: Über einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt
+    #   authors:
+    #     - Albert Einstein
+    #   publisher: Annalen der Physik
+    #   releaseDate: 1905-03-18
+    #   url: https://de.wikisource.org/wiki/Über_einen_die_Erzeugung_und_Verwandlung_des_Lichtes_betreffenden_heuristischen_Gesichtspunkt
+    #   summary: In the second paper, he applied the quantum theory to light to explain the photoelectric effect. In particular, he used the idea of light quanta (photons) to explain experimental results, but stressed the importance of the experimental results. The importance of his work on the photoelectric effect earned him the Nobel Prize in Physics in 1921.
 
-      # - title: Die Grundlage der allgemeinen Relativitätstheorie
-      #   authors:
-      #     - Albert Einstein
-      #   publisher: Annalen der Physik
-      #   releaseDate: 1916-03-20
-      #   url: https://de.wikisource.org/wiki/Die_Grundlage_der_allgemeinen_Relativitätstheorie
-      #   summary: The publication of the theory of general relativity made him internationally famous. He was professor of physics at the universities of Zurich (1909–1911) and Prague (1911–1912), before he returned to ETH Zurich (1912–1914).
+    # - title: Die Grundlage der allgemeinen Relativitätstheorie
+    #   authors:
+    #     - Albert Einstein
+    #   publisher: Annalen der Physik
+    #   releaseDate: 1916-03-20
+    #   url: https://de.wikisource.org/wiki/Die_Grundlage_der_allgemeinen_Relativitätstheorie
+    #   summary: The publication of the theory of general relativity made him internationally famous. He was professor of physics at the universities of Zurich (1909–1911) and Prague (1911–1912), before he returned to ETH Zurich (1912–1914).
 
     # Skills:
-      # - name: Physics
-      #   level: Master
-      #   icon: fa-solid fa-hashtag
-      #   keywords: "Quantum Mechanics, Quantum Computing, Quantum Information, Quantum Cryptography, Quantum Communication, Quantum Teleportation"
+    # - name: Physics
+    #   level: Master
+    #   icon: fa-solid fa-hashtag
+    #   keywords: "Quantum Mechanics, Quantum Computing, Quantum Information, Quantum Cryptography, Quantum Communication, Quantum Teleportation"
 
     Languages:
       - name: French
