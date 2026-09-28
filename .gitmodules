@@ -1,0 +1,3 @@
+[submodule "gems/al-folio-core"]
+	path = gems/al-folio-core
+	url = https://github.com/Alexis-IMBERT/al-folio-core.git

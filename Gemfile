@@ -41,7 +41,7 @@ end
 
 # Gems for al-folio plugins
 group :al_folio_plugins do
-    gem 'al_folio_core', '= 1.0.15'
+    gem 'al_folio_core', path: 'gems/al-folio-core'
     gem 'al_icons', '= 1.0.0'
     gem 'al_folio_cv', '= 1.0.2'
     gem 'al_folio_distill', '= 1.0.3'
