@@ -24,4 +24,4 @@ In short: `al-folio` v1.x is a **thin Jekyll starter, not a theme**. It owns sta
 
 ## CI expectations
 
-Keep these workflows aligned when changing starter behavior: `unit-tests.yml` (style contract plus all six `test/integration_*.sh` scripts), `visual-regression.yml`, `upgrade-check.yml`, `prettier.yml`, and `deploy.yml`.
+Keep these workflows aligned when changing starter behavior: `unit-tests.yml` (style contract plus all seven `test/integration_*.sh` scripts: comments, plugin_toggles, distill, bootstrap_compat, upgrade_cli, css_minify, and new_plugins), `visual-regression.yml`, `upgrade-check.yml`, `prettier.yml`, and `deploy.yml`.
