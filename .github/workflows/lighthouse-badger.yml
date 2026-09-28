@@ -52,7 +52,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: ${{ env.REPOSITORY }}
-          token: ${{ github.token }}
+          token: ${{ secrets.LIGHTHOUSE_BADGER_TOKEN }}
           ref: ${{ env.BRANCH }}
       - uses: actions/checkout@v4
         with:
