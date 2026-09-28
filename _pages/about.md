@@ -28,7 +28,15 @@ latest_posts:
 ---
 
 <!-- Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](https://www.reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder. -->
-French PhD Student at LITIS in INSA Rouen Normandy, I am working studying Machine Learning on Graph for studying the brain anatomy.
+Welcome! I am Alexis Imbert, a Machine Learning Researcher and PhD student at the LITIS laboratory, INSA Rouen Normandy.
+
+My research sits at the intersection of geometric deep learning and neuroscience. I work on analyzing brain anatomy by representing cortical surfaces as graphs. My goal is to design Graph Neural Networks that capture complex hierarchical information to better understand cognitive functions, while tackling domain shifts to ensure these models generalize well across different MRI datasets.
+
+Before starting my PhD, I earned my Engineering Degree in Computer Science and a Master's in Data Science. This dual background deeply influences my approach to research: I treat code quality and software architecture as essential components of good science. In addition to my academic work, I am an active open-source contributor to widely used libraries like [Scikit-learn](https://github.com/scikit-learn/scikit-learn/pull/28073) and [Ultralytics](https://github.com/ultralytics/ultralytics/pull/14301).
+
+I strongly believe in community engagement and sharing knowledge. Alongside my duties as an elected student representative at INSA Rouen, I co-organize the [Pint of Science](https://pintofscience.fr/events/rouen/) festival in Rouen, bringing researchers and the public together for engaging scientific discussions in a relaxed setting.
+
+In my free time, I trade my digital tools for vintage cameras and analog film photography. I also enjoy playing classical guitar, swimming, and climbing.
 
 <!-- Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically. -->
 
