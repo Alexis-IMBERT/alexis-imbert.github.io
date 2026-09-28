@@ -1,7 +1,9 @@
 ---
 layout: about
-title: about
+title: About
 permalink: /
+lang: en
+page_id: about
 subtitle: <a href='https://litislab.fr/'>LITIS</a>. INSA Rouen. #Contacts. Motto. Etc.
 
 profile:
@@ -26,6 +28,10 @@ latest_posts:
   scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
   limit: 3 # leave blank to include all the blog posts
 ---
+
+<!-- markdownlint-disable MD033 -->
+<nav aria-label="Language" markdown="0"><a {% static_href %}href="{{ site.baseurl }}/"{% endstatic_href %}>English</a> · <a {% static_href %}href="{{ site.baseurl }}/fr/"{% endstatic_href %}>Français</a> · <a {% static_href %}href="{{ site.baseurl }}/es/"{% endstatic_href %}>Español</a></nav>
+<!-- markdownlint-enable MD033 -->
 
 <!-- Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](https://www.reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder. -->
 
