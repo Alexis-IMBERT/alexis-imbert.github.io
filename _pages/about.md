@@ -1,7 +1,9 @@
 ---
 layout: about
-title: about
+title: About
 permalink: /
+lang: en
+page_id: about
 subtitle: <a href='https://litislab.fr/'>LITIS</a>. INSA Rouen. #Contacts. Motto. Etc.
 
 profile:

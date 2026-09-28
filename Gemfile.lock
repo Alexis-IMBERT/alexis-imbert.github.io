@@ -6,6 +6,13 @@ GIT
       jekyll (>= 0.10.0)
       terser (>= 1.0.0)
 
+PATH
+  remote: gems/al-folio-core
+  specs:
+    al_folio_core (1.0.15)
+      jekyll (>= 3.9, < 5.0)
+      liquid (>= 4.0, < 6.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -48,9 +55,6 @@ GEM
       jekyll (>= 3.9, < 5.0)
       nokogiri (>= 1.13, < 2.0)
     al_folio_bootstrap_compat (1.0.0)
-      jekyll (>= 3.9, < 5.0)
-      liquid (>= 4.0, < 6.0)
-    al_folio_core (1.0.15)
       jekyll (>= 3.9, < 5.0)
       liquid (>= 4.0, < 6.0)
     al_folio_cv (1.0.2)
@@ -226,6 +230,8 @@ GEM
       terser (~> 1.2.3)
     jekyll-paginate-v2 (3.0.0)
       jekyll (>= 3.0, < 5.0)
+    jekyll-polyglot (1.14.0)
+      jekyll (>= 4.0, >= 3.0)
     jekyll-regex-replace (1.1.0)
     jekyll-sass-converter (3.1.0)
       sass-embedded (~> 1.75)
@@ -362,7 +368,7 @@ DEPENDENCIES
   al_email_protect (= 1.0.1)
   al_ext_posts (= 1.0.3)
   al_folio_bootstrap_compat (= 1.0.0)
-  al_folio_core (= 1.0.15)
+  al_folio_core!
   al_folio_cv (= 1.0.2)
   al_folio_distill (= 1.0.3)
   al_folio_upgrade (= 1.0.3)
@@ -387,6 +393,7 @@ DEPENDENCIES
   jekyll-link-attributes
   jekyll-minifier
   jekyll-paginate-v2
+  jekyll-polyglot
   jekyll-regex-replace
   jekyll-scholar
   jekyll-sitemap
@@ -410,7 +417,7 @@ CHECKSUMS
   al_email_protect (1.0.1) sha256=04d1e9b19a47d26e6fa238baba197165653002c788b60525fef093ee1a3989e5
   al_ext_posts (1.0.3) sha256=c4956d36071958d30de14f6c368863d3e4190dfe312dba08ff79aa685292420d
   al_folio_bootstrap_compat (1.0.0) sha256=c210ff3087f17344dc864fa9594c737e947b23c6cae9fab3dbd37a87090b98a8
-  al_folio_core (1.0.15) sha256=eee5d0afefab5d3e8747b615890d760ed0ab01a1210991118709c4e969ad1326
+  al_folio_core (1.0.15)
   al_folio_cv (1.0.2) sha256=d9b8d3624c0c707a04deaa41972fa88395fa164419bccc44e2dc2488400022fa
   al_folio_distill (1.0.3) sha256=3feb669dd669effec127e1be5385158c5f98062c510980b5c9c802227ec2c247
   al_folio_upgrade (1.0.3) sha256=434ffddb27705852eae0bcaa01a8d007e0ef65472a989d1a33ae759f910f4709
@@ -480,6 +487,7 @@ CHECKSUMS
   jekyll-link-attributes (2.0.1) sha256=e25b12e3c2a2960c8cfd9ab33e8df9aa3c4ba86491dbeec48f3cb11b0a0f216d
   jekyll-minifier (0.2.2) sha256=f0a182b98b369492b9d93f1dd064223cf04a10ba31c49e1535f28fe35764ee19
   jekyll-paginate-v2 (3.0.0) sha256=001be6c1963caa41fed9c2f43b0d47201defa0395381eb8830487c1c2fc4f4e3
+  jekyll-polyglot (1.14.0) sha256=099a32e0b966e056a81c28627d0d9bc9b9784a1be5a448490e7a23407ee4fff1
   jekyll-regex-replace (1.1.0) sha256=3738e6a0aa07dd3f9b7369e6e38e5d245c623bbd70c31b21e7838c654377a00c
   jekyll-sass-converter (3.1.0) sha256=83925d84f1d134410c11d0c6643b0093e82e3a3cf127e90757a85294a3862443
   jekyll-scholar (7.3.0) sha256=d912e60aa5ab342fb4322772f02674152e2799375612a2aa5f9b2228728fd09b
