@@ -1,225 +1,242 @@
 cv:
   name: Alexis Imbert
-  headline: PhD Student in Computer Science
+  headline: PhD Student
+  location: INSA Rouen, France
   email: alexis.imbert@insa-rouen.fr
-  location: Rouen, France
   photo: "../assets/img/prof_pic.jpg"
 
   social_networks:
     - network: GitHub
-      username: alexis-imbert
+      username: Alexis-IMBERT
     - network: LinkedIn
       username: alexisimbert
 
   sections:
+    Languages:
+      - name: French
+        language: French
+        summary: "Native"
+        fluency: "Native"
+        label: French
+        details: "Native"
+        icon: fa-solid fa-language
+
+      - name: English
+        language: English
+        summary: "B2 - Professional (825/990 TOEIC)"
+        fluency: "B2 - Professional (825/990 TOEIC)"
+        label: English
+        details: "B2 - Professional (825/990 TOEIC)"
+        icon: fa-solid fa-language
+
+      - name: Spanish
+        language: Spanish
+        summary: "B2"
+        fluency: "B2"
+        label: Spanish
+        details: "B2"
+        icon: fa-solid fa-language
+
     Education:
       - institution: INSA Rouen Normandie
         location: Rouen, France
         url: https://www.insa-rouen.fr/
-        area: Data Science and Artificial Intelligence - Engineering - Informatique et Technologie de l'Information (ITI)
-        degree: Ingenieur (Master's degree)
+        area: Computer Science and Information Technology
+        degree: Eng
         start_date: 2021
-        end_date: 2024
-        # score: ""
-        # courses: "Theory of Relativity"
-        # highlights:
-        # - Description 1.
-        # - Description 2.
+        end_date: 2024-09
 
-      - institution: Rouen University
+      - institution: University of Rouen
         location: Rouen, France
         url: https://formation.univ-rouen.fr/fr/catalogue-de-l-offre-de-formation/master-lmd-XB/master-science-des-donnees-L5HXA4SK.html
-        area: Data Science - Master
-        degree: Master's degree
+        area: Data Science and Engineering
+        degree: MSc
         start_date: 2023
-        end_date: 2024
-        # score: ""
-        # courses: "Theory of Relativity"
-        # highlights:
-        # - Description 1.
-        # - Description 2.
+        end_date: 2024-06
 
-      - institution: RMIT
+      - institution: Royal Melbourne Institute of Technology (RMIT)
         location: Melbourne, Australia
         url: https://www.rmit.edu.au/
         area: Computer Science
-        degree: Academic Exchange Program
-        start_date: "2023-02"
-        end_date: "2023-07"
-        # score: ""
-        # courses: "Theory of Relativity"
-        # highlights:
-        # - Description 1.
-        # - Description 2.
+        degree: Exc
+        start_date: 2023-02
+        end_date: 2023-07
+        highlights:
+          - "Semester abroad, courses on AI for professionals, ethics in AI"
 
-      - institution: Polytech Sorbonne
+      - institution: Sorbonne University
         location: Paris, France
         url: https://www.polytech.sorbonne-universite.fr/
-        area: General Engineering
-        degree: Preparatory Engineering Program - PEIP
+        area: General scientific preparatory program
+        degree: PEIP
         start_date: 2019
         end_date: 2021
-        # score: ""
-        # courses: "Theory of Relativity"
-        # highlights:
-        # - Description 1.
-        # - Description 2.
 
     Experience:
       - company: INSA Rouen Normandie
-        position: PhD Student in Computer Science
+        position: PhD Student, Sulcal Pit Analysis of Cortical Surfaces with GNN
         location: Rouen, France
         start_date: 2024
-        end_date: present
+        end_date: 2027
         summary: >-
           Thesis supervised by Paul Honeine (University of Rouen), Guillaume Auzias (Institut
-          de Neurosciences de la Timone, CNRS, Aix-Marseille University), and Benoit Gauzere
+          de Neurosciences de la Timone, CNRS, Aix-Marseille University), and Benoît Gaüzère
           (INSA Rouen Normandie). Funded by the French National Research Agency as part of
-          the FAMOUS project. Research Questions:
-          1. Hierarchical Information Analysis in Brain Graphs: How can graph machine learning
-          models effectively capture and utilize hierarchical information in brain graphs to
-          enhance the representation and analysis of cortical folding patterns?
-          2. Robustness to MRI Acquisition Variations: Can a graph machine learning model
-          trained on brain data from one acquisition center generalize effectively to data from
-          different centers, improving reproducibility in neuroimaging studies? This research
-          explores transfer learning applications in GML.
-          3. Local Variation Identification for Cognitive Functions: How can GML methods identify
-          and analyze local variations in brain anatomy, and what insights can these variations
-          provide regarding cognitive functions and neurological conditions?
-      #   highlights:
-      #     - Description 1.
-      #     - Description 2.
-      - company: Teklia, Paris, France
-        position: Research Intern
+          the FAMOUS project.
+        highlights:
+          - "**Hierarchical Information Analysis in Brain Graphs:** How can graph machine learning models effectively capture and utilize hierarchical information in brain graphs to enhance the representation and analysis of cortical folding patterns?"
+          - "**Robustness to MRI Acquisition Variations:** Can a graph machine learning model trained on brain data from one acquisition center generalize effectively to data from different centers, improving reproducibility in neuroimaging studies? This research explores transfer learning applications in GML."
+          - "**Local Variation Identification for Cognitive Functions:** How can GML methods identify and analyze local variations in brain anatomy, and what insights can these variations provide regarding cognitive functions and neurological conditions?"
+          - "Publication at GBR 2025."
+
+      - company: Teklia
+        position: Research Engineer Internship, Historical Image Description with LLM
         location: Paris, France
-        start_date: 2024
-        end_date: 2024
+        start_date: "2024-02"
+        end_date: "2024-10"
         summary: Automatic description of historical Japanese photography using large multimodal language models (LLM). Project in collaboration with the Guimet Museum of Asian Arts and Teklia.
+        highlights:
+          - Benchmarking of prompt engineering software
+          - Image processing for consistency
+          - Large-scale experiment deployment
+          - Fine-tuning of existing models with project images
+          - Poster presentation at SIFED 2024
+
+    Skills:
+      - label: Machine Learning
+        name: Machine Learning
+        icon: fa-solid fa-brain
+        details: Python, Scikit-learn (contributor), PyTorch, PyTorch-Geometric, Torch-Lightning, LLM, vLLM, YOLO - Ultralytics (contributor), Open-source contributions
+        keywords: Python, Scikit-learn (contributor), PyTorch, PyTorch-Geometric, Torch-Lightning, LLM, vLLM, YOLO - Ultralytics (contributor), Open-source contributions
+
+      - label: Programming
+        name: Programming
+        icon: fa-solid fa-code
+        details: Python, C, Java, Octave & Matlab, HTML, CSS, JavaScript, Node.js, Vue.js, AJAX, Flask, PHP, Django
+        keywords: Python, C, Java, Octave & Matlab, HTML, CSS, JavaScript, Node.js, Vue.js, AJAX, Flask, PHP, Django
+
+      - label: Sports
+        name: Sports
+        icon: fa-solid fa-person-running
+        details: Swimming, Climbing, Skiing, Snowboarding
+        keywords: Swimming, Climbing, Skiing, Snowboarding
+
+      - label: Music
+        name: Music
+        icon: fa-solid fa-music
+        details: Musical training and classical guitar, solo and in groups for 13 years
+        keywords: Musical training and classical guitar, solo and in groups for 13 years
+
+    Publications:
+      - title: "Insights on Using Graph Neural Networks for Sulcal Graphs Predictive Models"
+        authors:
+          - "**Alexis Imbert**"
+          - Benoit Gauzere
+          - Sylvain Takerkart
+          - Guillaume Auzias
+          - Paul Honeine
+        date: 2025-06
+        journal: GBR 2025
+        publisher: GBR 2025
+        doi: 10.1007/978-3-031-94139-9_8
+        url: https://hal.science/hal-05271182
+        summary: "Alexis Imbert, Benoit Gauzere, Sylvain Takerkart, Guillaume Auzias, and Paul Honeine."
+
+      - title: "Évaluation de Large Language Models pour la description de photographies"
+        authors:
+          - "**Alexis Imbert**"
+          - Mélodie Boillet
+          - Christopher Kermorvant
+        date: 2024-06
+        journal: SIFED 2024
+        publisher: SIFED 2024
+        url: https://sifed2024.sciencesconf.org/resource/page/id/3
+        summary: "Alexis Imbert, Mélodie Boillet, and Christopher Kermorvant."
+
+    Projects:
+      - name: INSA Certified Project
+        date: 2023
+        summary: Project in collaboration with Actémium Paris Transport. Object detection in images and videos within the compressed domain, applied to road surveillance videos in tunnels.
+
+      - name: Web Platform for Academic Mobility Support
+        date: 2023
+        summary: Design of a web platform to facilitate administrative procedures for academic mobility from the perspectives of students and faculty.
+
+      - name: Fermi and von Neumann Elephant
+        date: 2022
+        summary: Project illustrating Von Neumann’s elephant concept, with functionalities for generating new designs, computing Fourier series, and reproducing initial designs with adjustable parameters.
+
+      - name: '"Pixel War" Multiplayer Game'
+        date: 2022
+        summary: Recreation of the "Pixel War" multiplayer game in a team of three, including backend, frontend, and database development. Players collaboratively place pixels on a canvas to create drawings.
+
+      - name: Recognition of Visually Identical Images
+        date: 2021
+        summary: Application of mathematical methods to detect pairs of visually identical images, accounting for variations in size, noise, and transformations. Introduction to machine learning concepts.
+
+      - name: Spellchecker in C
+        date: 2021
+        summary: Team project in C to develop a spellchecker using tree structures.
+
+    Volunteer:
+      - company: INSA Rouen Normandie
+        position: Representative of the student body at the scientific council of INSA Rouen Normandie.
+        location: Rouen, France
+        start_date: 2025-12-01
+        end_date: 2026-11-30
+        summary: Representative of the student body at the scientific council of INSA Rouen Normandie.
         # highlights:
-        #   - Relativity
-        #   - Description 2.
+        #   - "Led the club in organizing photography workshops and exhibitions."
+        #   - "Coordinated with other student organizations for collaborative events."
 
-      # - company: Kaiser Wilhelm Institute for Physics
-      #   position: Director
-      #   location: Berlin, Germany
-      #   start_date: 1917
-      #   end_date: 1933
+      - company: Pint of Science
+        position: Co-Coordinator of the Rouen 2026 and 2027 edition of the Pint of Science festival.
+        location: Rouen, France
+        start_date: 2025-09-01
+        end_date: 2027-06-30
+        summary: Co-Coordinator of the Rouen 2026 and 2027 edition of the Pint of Science festival.
+        highlights:
+          - "Organized and coordinated the Pint of Science festival in Rouen for two consecutive years."
+          - "Managed a team of volunteers and collaborated with local scientists to present engaging talks to the public."
 
-      # - company: Karl-Ferdinand University
-      #   position: Professor of Theoretical Physics
-      #   location: Prague, Czechoslovakia
-      #   start_date: 1911
-      #   end_date: 1917
+      - company: INSA Rouen Normandie
+        position: Representative of the student body at the board of directors of INSA Rouen Normandie.
+        location: Rouen, France
+        start_date: 2022-12-01
+        end_date: 2024-11-30
+        summary: Representative of the student body at the board of directors of INSA Rouen Normandie.
+        # highlights:
+        #   - "Led the club in organizing photography workshops and exhibitions."
+        #   - "Coordinated with other student organizations for collaborative events."
 
-      # - company: University of Zurich
-      #   position: Associate Professor of Theoretical Physics
-      #   location: Zurich, Switzerland
-      #   start_date: 1909
-      #   end_date: 1911
+      - company: INSA Rouen Normandie
+        position: Representative of the student body at the Department concil the ITI (study department) of INSA Rouen Normandie.
+        location: Rouen, France
+        start_date: 2021-10-01
+        end_date: 2024-07-30
+        summary: Representative of the student body at the Department concil the ITI (study department) of INSA Rouen Normandie.
+        # highlights:
+        #   - "Led the club in organizing photography workshops and exhibitions."
+        #   - "Coordinated with other student organizations for collaborative events."
 
-    # Volunteer:
-    # - company: People's Climate March
-    #   position: Lead Organizer
-    #   location: Zurich, Switzerland
-    #   start_date: 2014-04-01
-    #   end_date: 2015-07-01
-    #   summary: Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.
-    #   highlights:
-    #     - "Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march."
-    #     - "Men of the year 2014 by Time magazine"
+      - company: INSA Rouen Normandie
+        position: President of the Photography Club
+        location: Rouen, France
+        start_date: 2023-09-01
+        end_date: 2024-02-01
+        summary: President of the Photography Club at INSA Rouen Normandie.
+        highlights:
+          # - "Led the club in organizing photography workshops and exhibitions."
+          - "Coordinated with other student organizations for collaborative events."
 
-    # Awards:
-    # - title: Nobel Prize in Physics
-    #   authors:
-    #     - "Royal Swedish Academy of Sciences"
-    #   date: 1921-11-01
-    #   awarder: Royal Swedish Academy of Sciences
-    #   url: https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/
-    #   summary: The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'
+      - company: Hélène Boucher High School
+        position: President of the Sylver Photography Club
+        location: Paris, France
+        start_date: 2018-09-01
+        end_date: 2019-07-01
+        summary: President of the Sylver Photography Club at Hélène Boucher High School.
+        highlights:
+          - "Led the club in organizing photography workshops and exhibitions."
+          - "Coordinated with other student organizations for collaborative events."
+          - "Organized a photography exhibition at the school, showcasing students' work and promoting the art of photography."
 
-    # - title: Max Planck Medal
-    #   authors:
-    #     - "German Physical Society"
-    #   date: 2029
-    #   awarder: German Physical Society
-    #   summary: Awarded for outstanding scientific achievement
-
-    # Publications:
-    # - title: Zur Elektrodynamik bewegter Körper
-    #   authors:
-    #     - Albert Einstein
-    #   publisher: Annalen der Physik
-    #   releaseDate: 1905-06-30
-    #   url: https://en.wikisource.org/wiki/Translation:On_the_Electrodynamics_of_Moving_Bodies
-    #   summary: It concerned an interpretation of the Michelson–Morley experiment and the properties of light and time. Special relativity incorporates the principle that the speed of light is the same for all inertial observers regardless of the state of motion of the source.
-
-    # - title: Über einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt
-    #   authors:
-    #     - Albert Einstein
-    #   publisher: Annalen der Physik
-    #   releaseDate: 1905-03-18
-    #   url: https://de.wikisource.org/wiki/Über_einen_die_Erzeugung_und_Verwandlung_des_Lichtes_betreffenden_heuristischen_Gesichtspunkt
-    #   summary: In the second paper, he applied the quantum theory to light to explain the photoelectric effect. In particular, he used the idea of light quanta (photons) to explain experimental results, but stressed the importance of the experimental results. The importance of his work on the photoelectric effect earned him the Nobel Prize in Physics in 1921.
-
-    # - title: Die Grundlage der allgemeinen Relativitätstheorie
-    #   authors:
-    #     - Albert Einstein
-    #   publisher: Annalen der Physik
-    #   releaseDate: 1916-03-20
-    #   url: https://de.wikisource.org/wiki/Die_Grundlage_der_allgemeinen_Relativitätstheorie
-    #   summary: The publication of the theory of general relativity made him internationally famous. He was professor of physics at the universities of Zurich (1909–1911) and Prague (1911–1912), before he returned to ETH Zurich (1912–1914).
-
-    # Skills:
-    # - name: Physics
-    #   level: Master
-    #   icon: fa-solid fa-hashtag
-    #   keywords: "Quantum Mechanics, Quantum Computing, Quantum Information, Quantum Cryptography, Quantum Communication, Quantum Teleportation"
-
-    Languages:
-      - name: French
-        summary: "Native speaker"
-
-      - name: English
-        summary: "Fluent"
-
-      - name: Spanish
-        summary: "Intermediate"
-
-    # Interests:
-    #   - name: Physics
-    #     icon: fa-solid fa-tag
-    #     keywords: "Quantum Mechanics, Quantum Computing, Quantum Information, Quantum Cryptography, Quantum Communication, Quantum Teleportation"
-
-    # Certificates:
-    #   - name: Machine Learning
-    #     date: 2018-01-01
-    #     issuer: Stanford University
-    #     icon: fa-solid fa-location-dot
-
-    #   - name: Quantum Computing
-    #     date: 2018-01-01
-    #     issuer: Stanford University
-    #     icon: fa-solid fa-tag
-
-    #   - name: Quantum Information
-    #     date: 2018-01-01
-    #     issuer: Stanford University
-    #     icon: fa-solid fa-envelope
-
-    # Projects:
-    #   - name: Quantum Computing
-    #     summary: Quantum computing is the use of quantum-mechanical phenomena such as superposition and entanglement to perform computation. Computers that perform quantum computations are known as quantum computers.
-    #     highlights:
-    #       - Quantum Teleportation
-    #       - Quantum Cryptography
-    #     start_date: 2018-01-01
-    #     end_date: 2018-01-01
-
-    # References:
-    #   - name: Professor John Doe
-    #     icon: fa-solid fa-laptop
-    #     reference: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit.
-
-    #   - name: Professor Jane Smith
-    #     icon: fa-solid fa-thumbtack
-    #     reference: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit.
