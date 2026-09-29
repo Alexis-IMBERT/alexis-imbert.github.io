@@ -3,6 +3,10 @@
 # for more information, please refer to the documentation of jekyll-socials plugin: https://github.com/george-gca/jekyll-socials
 cv_pdf: /assets/pdf/CV_Alexis_IMBERT.pdf # path to your CV PDF file
 email: alexis.imbert@insa-rouen.fr # your email address
+hal_id: alexis-imbert # HAL author ID
+orcid_id: 0009-0000-4677-0981 # your ORCID ID
+github_username: Alexis-IMBERT # your GitHub username
+linkedin_username: alexisimbert # your LinkedIn username
 # inspirehep_id: 1010907 # Inspire HEP author ID
 # rss_icon: true # comment this line to hide the RSS icon
 scholar_userid: mLOeoWgAAAAJ # your Google Scholar ID
