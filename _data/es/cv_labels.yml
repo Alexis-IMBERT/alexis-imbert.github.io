@@ -1,0 +1,20 @@
+# Spanish labels for the CV page. `sections` maps each section title used in _data/es/cv.yml
+# to the English section type the template dispatches on (Experience, Education, ...).
+sections:
+  Idiomas: Languages
+  Formación: Education
+  Experiencia: Experience
+  Competencias: Skills
+  Publicaciones: Publications
+  Proyectos: Projects
+  Voluntariado: Volunteer
+
+labels:
+  contact_information: Datos de contacto
+  name: Nombre
+  professional_title: Puesto
+  email: Correo electrónico
+  phone: Teléfono
+  location: Dirección
+  website: Sitio web
+  professional_summary: Resumen

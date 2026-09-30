@@ -1,0 +1,234 @@
+# Spanish version of _data/cv.yml, used when the site is served in Spanish (/es/cv/).
+# Section titles are displayed as-is on the web page and in the PDF; _data/es/cv_labels.yml
+# maps each Spanish title back to the English section type so the web template picks the right layout.
+cv:
+  name: Alexis Imbert
+  headline: Doctorando
+  location: INSA Rouen, Francia
+  email: alexis.imbert@insa-rouen.fr
+  photo: "../../assets/img/prof_pic.jpg"
+
+  social_networks:
+    - network: GitHub
+      username: Alexis-IMBERT
+    - network: LinkedIn
+      username: alexisimbert
+
+  sections:
+    Idiomas:
+      - name: Francés
+        language: Francés
+        summary: "Lengua materna"
+        fluency: "Lengua materna"
+        label: Francés
+        details: "Lengua materna"
+        icon: fa-solid fa-language
+
+      - name: Inglés
+        language: Inglés
+        summary: "B2 - Profesional (TOEIC 825/990)"
+        fluency: "B2 - Profesional (TOEIC 825/990)"
+        label: Inglés
+        details: "B2 - Profesional (TOEIC 825/990)"
+        icon: fa-solid fa-language
+
+      - name: Español
+        language: Español
+        summary: "B2"
+        fluency: "B2"
+        label: Español
+        details: "B2"
+        icon: fa-solid fa-language
+
+    Formación:
+      - institution: INSA Rouen Normandie
+        location: Ruan, Francia
+        url: https://www.insa-rouen.fr/
+        area: Informática y tecnologías de la información
+        degree: Ing.
+        start_date: 2021
+        end_date: 2024-09
+
+      - institution: Universidad de Ruan
+        location: Ruan, Francia
+        url: https://formation.univ-rouen.fr/fr/catalogue-de-l-offre-de-formation/master-lmd-XB/master-science-des-donnees-L5HXA4SK.html
+        area: Ciencia de datos
+        degree: MSc
+        start_date: 2023
+        end_date: 2024-06
+
+      - institution: Royal Melbourne Institute of Technology (RMIT)
+        location: Melbourne, Australia
+        url: https://www.rmit.edu.au/
+        area: Informática
+        degree: Int.
+        start_date: 2023-02
+        end_date: 2023-07
+        highlights:
+          - "Semestre de intercambio, cursos de IA para profesionales y de ética de la IA"
+
+      - institution: Sorbonne Université
+        location: París, Francia
+        url: https://www.polytech.sorbonne-universite.fr/
+        area: Ciclo preparatorio científico de las escuelas de ingeniería Polytech
+        degree: PEIP
+        start_date: 2019
+        end_date: 2021
+
+    Experiencia:
+      - company: INSA Rouen Normandie
+        position: Doctorando, análisis de los pits sulcales de la superficie cortical con GNN
+        location: Ruan, Francia
+        start_date: 2024
+        end_date: 2027
+        summary: >-
+          Tesis dirigida por Paul Honeine (Universidad de Ruan), Guillaume Auzias (Institut
+          de Neurosciences de la Timone, CNRS, Universidad de Aix-Marsella) y Benoît Gaüzère
+          (INSA Rouen Normandie). Financiada por la Agencia Nacional de Investigación francesa
+          (ANR) en el marco del proyecto FAMOUS.
+        highlights:
+          - "**Análisis de la información jerárquica en grafos cerebrales:** ¿cómo pueden los modelos de aprendizaje automático sobre grafos captar y aprovechar la información jerárquica de los grafos cerebrales para representar y analizar mejor los patrones de plegamiento cortical?"
+          - "**Robustez frente a las variaciones de adquisición de RM:** ¿puede un modelo de aprendizaje sobre grafos entrenado con datos de un centro de adquisición generalizar a otros centros y mejorar la reproducibilidad de los estudios de neuroimagen? Esta investigación explora el aprendizaje por transferencia en GML."
+          - "**Identificación de variaciones locales asociadas a funciones cognitivas:** ¿cómo pueden los métodos de GML identificar y analizar las variaciones locales de la anatomía cerebral, y qué revelan sobre las funciones cognitivas y las enfermedades neurológicas?"
+          - "Publicación en GBR 2025."
+
+      - company: Teklia
+        position: Prácticas de ingeniero de investigación, descripción de imágenes históricas con LLM
+        location: París, Francia
+        start_date: "2024-02"
+        end_date: "2024-10"
+        summary: Descripción automática de fotografías japonesas históricas mediante grandes modelos de lenguaje multimodales (LLM). Proyecto en colaboración con el Museo Guimet de Artes Asiáticas y Teklia.
+        highlights:
+          - Evaluación comparativa de herramientas de prompt engineering
+          - Procesamiento de imágenes para homogeneizar el corpus
+          - Despliegue de experimentos a gran escala
+          - Ajuste fino (fine-tuning) de modelos existentes con las imágenes del proyecto
+          - Presentación de un póster en SIFED 2024
+
+    Competencias:
+      - label: Aprendizaje automático
+        name: Aprendizaje automático
+        icon: fa-solid fa-brain
+        details: Python, Scikit-learn (contribuidor), PyTorch, PyTorch-Geometric, Torch-Lightning, LLM, vLLM, YOLO - Ultralytics (contribuidor), contribuciones de código abierto
+        keywords: Python, Scikit-learn (contribuidor), PyTorch, PyTorch-Geometric, Torch-Lightning, LLM, vLLM, YOLO - Ultralytics (contribuidor), contribuciones de código abierto
+
+      - label: Programación
+        name: Programación
+        icon: fa-solid fa-code
+        details: Python, C, Java, Octave & Matlab, HTML, CSS, JavaScript, Node.js, Vue.js, AJAX, Flask, PHP, Django
+        keywords: Python, C, Java, Octave & Matlab, HTML, CSS, JavaScript, Node.js, Vue.js, AJAX, Flask, PHP, Django
+
+      - label: Deportes
+        name: Deportes
+        icon: fa-solid fa-person-running
+        details: Natación, escalada, esquí, snowboard
+        keywords: Natación, escalada, esquí, snowboard
+
+      - label: Música
+        name: Música
+        icon: fa-solid fa-music
+        details: Formación musical y guitarra clásica, en solitario y en grupo durante 13 años
+        keywords: Formación musical y guitarra clásica, en solitario y en grupo durante 13 años
+
+    Publicaciones:
+      - title: "Insights on Using Graph Neural Networks for Sulcal Graphs Predictive Models"
+        authors:
+          - "**Alexis Imbert**"
+          - Benoit Gauzere
+          - Sylvain Takerkart
+          - Guillaume Auzias
+          - Paul Honeine
+        date: 2025-06
+        journal: GBR 2025
+        publisher: GBR 2025
+        doi: 10.1007/978-3-031-94139-9_8
+        url: https://hal.science/hal-05271182
+        summary: "Alexis Imbert, Benoit Gauzere, Sylvain Takerkart, Guillaume Auzias y Paul Honeine."
+
+      - title: "Évaluation de Large Language Models pour la description de photographies"
+        authors:
+          - "**Alexis Imbert**"
+          - Mélodie Boillet
+          - Christopher Kermorvant
+        date: 2024-06
+        journal: SIFED 2024
+        publisher: SIFED 2024
+        url: https://sifed2024.sciencesconf.org/resource/page/id/3
+        summary: "Alexis Imbert, Mélodie Boillet y Christopher Kermorvant."
+
+    Proyectos:
+      - name: Proyecto certificado del INSA
+        date: 2023
+        summary: Proyecto en colaboración con Actemium Paris Transport. Detección de objetos en imágenes y vídeos directamente en el dominio comprimido, aplicada a vídeos de vigilancia vial en túneles.
+
+      - name: Plataforma web de apoyo a la movilidad académica
+        date: 2023
+        summary: Diseño de una plataforma web que facilita los trámites administrativos de la movilidad académica, desde el punto de vista de los estudiantes y del profesorado.
+
+      - name: El elefante de Fermi y von Neumann
+        date: 2022
+        summary: Proyecto que ilustra el elefante de von Neumann, con generación de nuevos dibujos, cálculo de series de Fourier y reproducción de los dibujos iniciales con parámetros ajustables.
+
+      - name: 'Juego multijugador "Pixel War"'
+        date: 2022
+        summary: Recreación en equipo de tres del juego multijugador «Pixel War» (backend, frontend y base de datos). Los jugadores colocan píxeles juntos en un lienzo para crear dibujos.
+
+      - name: Reconocimiento de imágenes visualmente idénticas
+        date: 2021
+        summary: Aplicación de métodos matemáticos para detectar pares de imágenes visualmente idénticas a pesar de variaciones de tamaño, ruido y transformaciones. Introducción a los conceptos del aprendizaje automático.
+
+      - name: Corrector ortográfico en C
+        date: 2021
+        summary: Proyecto en equipo en C para desarrollar un corrector ortográfico basado en estructuras de árbol.
+
+    Voluntariado:
+      - company: INSA Rouen Normandie
+        position: Representante de los estudiantes en el consejo científico del INSA Rouen Normandie.
+        location: Ruan, Francia
+        start_date: 2025-12-01
+        end_date: 2026-11-30
+        summary: Representante de los estudiantes en el consejo científico del INSA Rouen Normandie.
+
+      - company: Pint of Science
+        position: Cocoordinador de las ediciones 2026 y 2027 del festival Pint of Science en Ruan.
+        location: Ruan, Francia
+        start_date: 2025-09-01
+        end_date: 2027-06-30
+        summary: Cocoordinador de las ediciones 2026 y 2027 del festival Pint of Science en Ruan.
+        highlights:
+          - "Organización y coordinación del festival Pint of Science en Ruan durante dos años consecutivos."
+          - "Gestión de un equipo de voluntarios y colaboración con científicos locales para ofrecer al público charlas accesibles."
+
+      - company: INSA Rouen Normandie
+        position: Representante de los estudiantes en el consejo de administración del INSA Rouen Normandie.
+        location: Ruan, Francia
+        start_date: 2022-12-01
+        end_date: 2024-11-30
+        summary: Representante de los estudiantes en el consejo de administración del INSA Rouen Normandie.
+
+      - company: INSA Rouen Normandie
+        position: Representante de los estudiantes en el consejo del departamento ITI del INSA Rouen Normandie.
+        location: Ruan, Francia
+        start_date: 2021-10-01
+        end_date: 2024-07-30
+        summary: Representante de los estudiantes en el consejo del departamento ITI del INSA Rouen Normandie.
+
+      - company: INSA Rouen Normandie
+        position: Presidente del club de fotografía
+        location: Ruan, Francia
+        start_date: 2023-09-01
+        end_date: 2024-02-01
+        summary: Presidente del club de fotografía del INSA Rouen Normandie.
+        highlights:
+          - "Coordinación con otras asociaciones estudiantiles para organizar eventos conjuntos."
+
+      - company: Instituto Hélène Boucher
+        position: Presidente del club de fotografía Sylver
+        location: París, Francia
+        start_date: 2018-09-01
+        end_date: 2019-07-01
+        summary: Presidente del club de fotografía Sylver del instituto Hélène Boucher.
+        highlights:
+          - "Organización de talleres y exposiciones de fotografía."
+          - "Coordinación con otras asociaciones estudiantiles para organizar eventos conjuntos."
+          - "Organización de una exposición de fotografía en el instituto para dar a conocer el trabajo de los alumnos y promover la fotografía."
