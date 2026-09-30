@@ -5,6 +5,7 @@ on:
       - main
       - master
     paths:
+      - ".github/workflows/render-cv.yml"
       - "_data/cv.yml"
       - "_data/*/cv.yml"
       - "assets/rendercv/design.yaml"
@@ -68,5 +69,10 @@ jobs:
           git config --global user.name "${{ github.actor }}"
           git config --global user.email "${{ github.actor }}@users.noreply.github.com"
           git add -A
+          # RenderCV output is deterministic: skip the commit when the PDFs are already up to date.
+          if git diff --cached --quiet; then
+            echo "Rendered CVs are unchanged, nothing to push."
+            exit 0
+          fi
           git commit -m "chore: render the latest CV"
           git push
