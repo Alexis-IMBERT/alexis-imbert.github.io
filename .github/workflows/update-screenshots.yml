@@ -44,6 +44,7 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v6
         with:
+          submodules: true
           # Check out the branch by name. Called from release.yml the ref can be
           # a tag, which would leave a detached HEAD and make the push below
           # fail with "not currently on a branch".
