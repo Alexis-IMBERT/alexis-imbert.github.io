@@ -1,0 +1,20 @@
+# French labels for the CV page. `sections` maps each section title used in _data/fr/cv.yml
+# to the English section type the template dispatches on (Experience, Education, ...).
+sections:
+  Langues: Languages
+  Formation: Education
+  Expérience: Experience
+  Compétences: Skills
+  Publications: Publications
+  Projets: Projects
+  Engagements: Volunteer
+
+labels:
+  contact_information: Coordonnées
+  name: Nom
+  professional_title: Poste
+  email: E-mail
+  phone: Téléphone
+  location: Adresse
+  website: Site web
+  professional_summary: Résumé

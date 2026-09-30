@@ -1,0 +1,18 @@
+# French CV settings (used with _data/fr/cv.yml).
+# for details on settings, see https://docs.rendercv.com/user_guide/yaml_input_structure/settings/
+settings:
+  render_command:
+    # Paths must be relative to _data/fr/cv.yml
+    design: ../../assets/rendercv/design.yaml
+    locale: ../../assets/rendercv/locale.fr.yaml
+    typst_path: ../../assets/rendercv/rendercv_output/NAME_IN_SNAKE_CASE_CV_fr.typ
+    pdf_path: ../../assets/rendercv/rendercv_output/NAME_IN_SNAKE_CASE_CV_fr.pdf
+    markdown_path: ../../assets/rendercv/rendercv_output/NAME_IN_SNAKE_CASE_CV_fr.md
+    html_path: ../../assets/rendercv/rendercv_output/NAME_IN_SNAKE_CASE_CV_fr.html
+    png_path: ../../assets/rendercv/rendercv_output/NAME_IN_SNAKE_CASE_CV_fr.png
+    dont_generate_markdown: true
+    dont_generate_html: true
+    dont_generate_typst: false # typst generation is required for pdf output
+    dont_generate_pdf: false
+    dont_generate_png: true
+  bold_keywords: []

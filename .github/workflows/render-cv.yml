@@ -6,9 +6,10 @@ on:
       - master
     paths:
       - "_data/cv.yml"
+      - "_data/*/cv.yml"
       - "assets/rendercv/design.yaml"
-      - "assets/rendercv/locale.yaml"
-      - "assets/rendercv/settings.yaml"
+      - "assets/rendercv/locale*.yaml"
+      - "assets/rendercv/settings*.yaml"
   workflow_call:
   workflow_dispatch:
 permissions:
@@ -43,6 +44,19 @@ jobs:
             exit 1
           fi
           rendercv render $cv_file --settings $settings
+          # Translated CVs: _data/<lang>/cv.yml rendered with settings.<lang>.yaml and locale.<lang>.yaml.
+          # The locale is passed explicitly because RenderCV ignores render_command.locale from --settings.
+          for localized_cv in _data/*/cv.yml; do
+            [ -e "$localized_cv" ] || continue
+            lang=$(basename "$(dirname "$localized_cv")")
+            lang_settings="$rendercv_dir/settings.$lang.yaml"
+            lang_locale="$rendercv_dir/locale.$lang.yaml"
+            if [ ! -f "$lang_settings" ] || [ ! -f "$lang_locale" ]; then
+              echo "Missing $lang_settings or $lang_locale for $localized_cv!"
+              exit 1
+            fi
+            rendercv render "$localized_cv" --settings "$lang_settings" --locale-catalog "$lang_locale"
+          done
           rm assets/rendercv/rendercv_output/*.typ
       - name: Upload rendercv_output as an artifact
         uses: actions/upload-artifact@v4
